@@ -1,0 +1,11153 @@
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/all.html
+
+List of all items in this crate
+proc_macro
+1.82.0-dev
+Macros
+Structs
+Enums
+Traits
+Functions
+List of all items
+Structs
+Diagnostic
+ExpandError
+Group
+Ident
+LexError
+Literal
+Punct
+SourceFile
+Span
+TokenStream
+token_stream::IntoIter
+Enums
+Delimiter
+Level
+Spacing
+TokenTree
+Traits
+MultiSpan
+Macros
+quote
+Functions
+is_available
+quote
+quote_span
+tracked_env::var
+tracked_path::path
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/macro.quote.html
+
+quote in proc_macro - Rust
+proc_macro
+1.82.0-dev
+Macro
+proc_macro
+::
+quote
+Copy item path
+source
+·
+[
+−
+]
+pub macro
+quote($(
+$t
+:tt)
+*
+) {
+    ...
+}
+🔬
+This is a nightly-only experimental API. (
+proc_macro_quote
+#54722
+)
+Expand description
+quote!(..)
+accepts arbitrary tokens and expands into a
+TokenStream
+describing the input.
+For example,
+quote!(a + b)
+will produce an expression, that, when evaluated, constructs
+the
+TokenStream
+[Ident("a"), Punct('+', Alone), Ident("b")]
+.
+Unquoting is done with
+$
+, and works by taking the single next ident as the unquoted term.
+To quote
+$
+itself, use
+$$
+.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/struct.Ident.html
+
+Ident in proc_macro - Rust
+proc_macro
+1.82.0-dev
+Ident
+Methods
+new
+new_raw
+set_span
+span
+Trait Implementations
+Clone
+Debug
+Display
+From<Ident>
+Auto Trait Implementations
+!Send
+!Sync
+Freeze
+RefUnwindSafe
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+ToString
+TryFrom<U>
+TryInto<U>
+In crate proc_macro
+Struct
+proc_macro
+::
+Ident
+Copy item path
+1.29.0
+·
+source
+·
+[
+−
+]
+pub struct Ident(
+/* private fields */
+);
+Expand description
+An identifier (
+ident
+).
+Implementations
+§
+source
+§
+impl
+Ident
+1.29.0
+·
+source
+pub fn
+new
+(string: &
+str
+, span:
+Span
+) ->
+Ident
+Creates a new
+Ident
+with the given
+string
+as well as the specified
+span
+.
+The
+string
+argument must be a valid identifier permitted by the
+language (including keywords, e.g.
+self
+or
+fn
+). Otherwise, the function will panic.
+Note that
+span
+, currently in rustc, configures the hygiene information
+for this identifier.
+As of this time
+Span::call_site()
+explicitly opts-in to “call-site” hygiene
+meaning that identifiers created with this span will be resolved as if they were written
+directly at the location of the macro call, and other code at the macro call site will be
+able to refer to them as well.
+Later spans like
+Span::def_site()
+will allow to opt-in to “definition-site” hygiene
+meaning that identifiers created with this span will be resolved at the location of the
+macro definition and other code at the macro call site will not be able to refer to them.
+Due to the current importance of hygiene this constructor, unlike other
+tokens, requires a
+Span
+to be specified at construction.
+1.47.0
+·
+source
+pub fn
+new_raw
+(string: &
+str
+, span:
+Span
+) ->
+Ident
+Same as
+Ident::new
+, but creates a raw identifier (
+r#ident
+).
+The
+string
+argument be a valid identifier permitted by the language
+(including keywords, e.g.
+fn
+). Keywords which are usable in path segments
+(e.g.
+self
+,
+super
+) are not supported, and will cause a panic.
+1.29.0
+·
+source
+pub fn
+span
+(&self) ->
+Span
+Returns the span of this
+Ident
+, encompassing the entire string returned
+by
+to_string
+.
+1.29.0
+·
+source
+pub fn
+set_span
+(&mut self, span:
+Span
+)
+Configures the span of this
+Ident
+, possibly changing its hygiene context.
+Trait Implementations
+§
+1.29.0
+·
+source
+§
+impl
+Clone
+for
+Ident
+source
+§
+fn
+clone
+(&self) ->
+Ident
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+1.29.0
+·
+source
+§
+impl
+Debug
+for
+Ident
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+1.29.0
+·
+source
+§
+impl
+Display
+for
+Ident
+Prints the identifier as a string that should be losslessly convertible back
+into the same identifier.
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+1.29.0
+·
+source
+§
+impl
+From
+<
+Ident
+> for
+TokenTree
+source
+§
+fn
+from
+(g:
+Ident
+) ->
+TokenTree
+Converts to this type from the input type.
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+Ident
+§
+impl
+RefUnwindSafe
+for
+Ident
+§
+impl !
+Send
+for
+Ident
+§
+impl !
+Sync
+for
+Ident
+§
+impl
+Unpin
+for
+Ident
+§
+impl
+UnwindSafe
+for
+Ident
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T>
+ToString
+for T
+where
+    T:
+Display
++ ?
+Sized
+,
+source
+§
+default fn
+to_string
+(&self) ->
+String
+Converts the given value to a
+String
+.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/index.html
+
+proc_macro - Rust
+proc_macro
+1.82.0-dev
+All Items
+Modules
+Macros
+Structs
+Enums
+Traits
+Functions
+Crate
+proc_macro
+Copy item path
+1.15.0
+·
+source
+·
+[
+−
+]
+Expand description
+A support library for macro authors when defining new macros.
+This library, provided by the standard distribution, provides the types
+consumed in the interfaces of procedurally defined macro definitions such as
+function-like macros
+#[proc_macro]
+, macro attributes
+#[proc_macro_attribute]
+and
+custom derive attributes
+#[proc_macro_derive]
+.
+See
+the book
+for more.
+Modules
+§
+token_stream
+Public implementation details for the
+TokenStream
+type, such as iterators.
+tracked_env
+Experimental
+Tracked access to environment variables.
+tracked_path
+Experimental
+Tracked access to additional files.
+Macros
+§
+quote
+Experimental
+quote!(..)
+accepts arbitrary tokens and expands into a
+TokenStream
+describing the input.
+For example,
+quote!(a + b)
+will produce an expression, that, when evaluated, constructs
+the
+TokenStream
+[Ident("a"), Punct('+', Alone), Ident("b")]
+.
+Structs
+§
+Group
+A delimited token stream.
+Ident
+An identifier (
+ident
+).
+LexError
+Error returned from
+TokenStream::from_str
+.
+Literal
+A literal string (
+"hello"
+), byte string (
+b"hello"
+),
+character (
+'a'
+), byte character (
+b'a'
+), an integer or floating point number
+with or without a suffix (
+1
+,
+1u8
+,
+2.3
+,
+2.3f32
+).
+Boolean literals like
+true
+and
+false
+do not belong here, they are
+Ident
+s.
+Punct
+A
+Punct
+is a single punctuation character such as
++
+,
+-
+or
+#
+.
+Span
+A region of source code, along with macro expansion information.
+TokenStream
+The main type provided by this crate, representing an abstract stream of
+tokens, or, more specifically, a sequence of token trees.
+The type provides interfaces for iterating over those token trees and, conversely,
+collecting a number of token trees into one stream.
+Diagnostic
+Experimental
+A structure representing a diagnostic message and associated children
+messages.
+ExpandError
+Experimental
+Error returned from
+TokenStream::expand_expr
+.
+SourceFile
+Experimental
+The source file of a given
+Span
+.
+Enums
+§
+Delimiter
+Describes how a sequence of token trees is delimited.
+Spacing
+Indicates whether a
+Punct
+token can join with the following token
+to form a multi-character operator.
+TokenTree
+A single token or a delimited sequence of token trees (e.g.,
+[1, (), ..]
+).
+Level
+Experimental
+An enum representing a diagnostic level.
+Traits
+§
+MultiSpan
+Experimental
+Trait implemented by types that can be converted into a set of
+Span
+s.
+Functions
+§
+is_available
+Determines whether proc_macro has been made accessible to the currently
+running program.
+quote
+Experimental
+Quote a
+TokenStream
+into a
+TokenStream
+.
+This is the actual implementation of the
+quote!()
+proc macro.
+quote_span
+Experimental
+Quote a
+Span
+into a
+TokenStream
+.
+This is needed to implement a custom quoter.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/fn.quote.html
+
+quote in proc_macro - Rust
+proc_macro
+1.82.0-dev
+Function
+proc_macro
+::
+quote
+Copy item path
+source
+·
+[
+−
+]
+pub fn quote(stream:
+TokenStream
+) ->
+TokenStream
+🔬
+This is a nightly-only experimental API. (
+proc_macro_quote
+#54722
+)
+Expand description
+Quote a
+TokenStream
+into a
+TokenStream
+.
+This is the actual implementation of the
+quote!()
+proc macro.
+It is loaded by the compiler in
+register_builtin_macros
+.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/struct.Group.html
+
+Group in proc_macro - Rust
+proc_macro
+1.82.0-dev
+Group
+Methods
+delimiter
+new
+set_span
+span
+span_close
+span_open
+stream
+Trait Implementations
+!Send
+!Sync
+Clone
+Debug
+Display
+From<Group>
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+ToString
+TryFrom<U>
+TryInto<U>
+In crate proc_macro
+Struct
+proc_macro
+::
+Group
+Copy item path
+1.29.0
+·
+source
+·
+[
+−
+]
+pub struct Group(
+/* private fields */
+);
+Expand description
+A delimited token stream.
+A
+Group
+internally contains a
+TokenStream
+which is surrounded by
+Delimiter
+s.
+Implementations
+§
+source
+§
+impl
+Group
+1.29.0
+·
+source
+pub fn
+new
+(delimiter:
+Delimiter
+, stream:
+TokenStream
+) ->
+Group
+Creates a new
+Group
+with the given delimiter and token stream.
+This constructor will set the span for this group to
+Span::call_site()
+. To change the span you can use the
+set_span
+method below.
+1.29.0
+·
+source
+pub fn
+delimiter
+(&self) ->
+Delimiter
+Returns the delimiter of this
+Group
+1.29.0
+·
+source
+pub fn
+stream
+(&self) ->
+TokenStream
+Returns the
+TokenStream
+of tokens that are delimited in this
+Group
+.
+Note that the returned token stream does not include the delimiter
+returned above.
+1.29.0
+·
+source
+pub fn
+span
+(&self) ->
+Span
+Returns the span for the delimiters of this token stream, spanning the
+entire
+Group
+.
+pub fn span(&self) -> Span {
+           ^^^^^^^
+1.55.0
+·
+source
+pub fn
+span_open
+(&self) ->
+Span
+Returns the span pointing to the opening delimiter of this group.
+pub fn span_open(&self) -> Span {
+                ^
+1.55.0
+·
+source
+pub fn
+span_close
+(&self) ->
+Span
+Returns the span pointing to the closing delimiter of this group.
+pub fn span_close(&self) -> Span {
+                       ^
+1.29.0
+·
+source
+pub fn
+set_span
+(&mut self, span:
+Span
+)
+Configures the span for this
+Group
+’s delimiters, but not its internal
+tokens.
+This method will
+not
+set the span of all the internal tokens spanned
+by this group, but rather it will only set the span of the delimiter
+tokens at the level of the
+Group
+.
+Trait Implementations
+§
+1.29.0
+·
+source
+§
+impl
+Clone
+for
+Group
+source
+§
+fn
+clone
+(&self) ->
+Group
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+1.29.0
+·
+source
+§
+impl
+Debug
+for
+Group
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+1.29.0
+·
+source
+§
+impl
+Display
+for
+Group
+Prints the group as a string that should be losslessly convertible back
+into the same group (modulo spans), except for possibly
+TokenTree::Group
+s
+with
+Delimiter::None
+delimiters.
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+1.29.0
+·
+source
+§
+impl
+From
+<
+Group
+> for
+TokenTree
+source
+§
+fn
+from
+(g:
+Group
+) ->
+TokenTree
+Converts to this type from the input type.
+1.29.0
+·
+source
+§
+impl !
+Send
+for
+Group
+1.29.0
+·
+source
+§
+impl !
+Sync
+for
+Group
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+Group
+§
+impl
+RefUnwindSafe
+for
+Group
+§
+impl
+Unpin
+for
+Group
+§
+impl
+UnwindSafe
+for
+Group
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T>
+ToString
+for T
+where
+    T:
+Display
++ ?
+Sized
+,
+source
+§
+default fn
+to_string
+(&self) ->
+String
+Converts the given value to a
+String
+.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/fn.quote_span.html
+
+quote_span in proc_macro - Rust
+proc_macro
+1.82.0-dev
+Function
+proc_macro
+::
+quote_span
+Copy item path
+source
+·
+[
+−
+]
+pub fn quote_span(proc_macro_crate:
+TokenStream
+, span:
+Span
+) ->
+TokenStream
+🔬
+This is a nightly-only experimental API. (
+proc_macro_quote
+#54722
+)
+Expand description
+Quote a
+Span
+into a
+TokenStream
+.
+This is needed to implement a custom quoter.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/enum.Delimiter.html
+
+Delimiter in proc_macro - Rust
+proc_macro
+1.82.0-dev
+Delimiter
+Variants
+Brace
+Bracket
+None
+Parenthesis
+Trait Implementations
+Clone
+Copy
+Debug
+Eq
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In crate proc_macro
+Enum
+proc_macro
+::
+Delimiter
+Copy item path
+1.29.0
+·
+source
+·
+[
+−
+]
+pub enum Delimiter {
+    Parenthesis,
+    Brace,
+    Bracket,
+    None,
+}
+Expand description
+Describes how a sequence of token trees is delimited.
+Variants
+§
+§
+1.29.0
+Parenthesis
+( ... )
+§
+1.29.0
+Brace
+{ ... }
+§
+1.29.0
+Bracket
+[ ... ]
+§
+1.29.0
+None
+∅ ... ∅
+An invisible delimiter, that may, for example, appear around tokens coming from a
+“macro variable”
+$var
+. It is important to preserve operator priorities in cases like
+$var * 3
+where
+$var
+is
+1 + 2
+.
+Invisible delimiters might not survive roundtrip of a token stream through a string.
+Note: rustc currently can ignore the grouping of tokens delimited by
+None
+in the output
+of a proc_macro. Only
+None
+-delimited groups created by a macro_rules macro in the input
+of a proc_macro macro are preserved, and only in very specific circumstances.
+Any
+None
+-delimited groups (re)created by a proc_macro will therefore not preserve
+operator priorities as indicated above. The other
+Delimiter
+variants should be used
+instead in this context. This is a rustc bug. For details, see
+rust-lang/rust#67062
+.
+Trait Implementations
+§
+1.29.0
+·
+source
+§
+impl
+Clone
+for
+Delimiter
+source
+§
+fn
+clone
+(&self) ->
+Delimiter
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+1.29.0
+·
+source
+§
+impl
+Debug
+for
+Delimiter
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+1.29.0
+·
+source
+§
+impl
+PartialEq
+for
+Delimiter
+source
+§
+fn
+eq
+(&self, other: &
+Delimiter
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+1.29.0
+·
+source
+§
+impl
+Copy
+for
+Delimiter
+1.29.0
+·
+source
+§
+impl
+Eq
+for
+Delimiter
+1.29.0
+·
+source
+§
+impl
+StructuralPartialEq
+for
+Delimiter
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+Delimiter
+§
+impl
+RefUnwindSafe
+for
+Delimiter
+§
+impl
+Send
+for
+Delimiter
+§
+impl
+Sync
+for
+Delimiter
+§
+impl
+Unpin
+for
+Delimiter
+§
+impl
+UnwindSafe
+for
+Delimiter
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/macro.quote!.html
+
+Redirection
+Redirecting to
+macro.quote.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/struct.Literal.html
+
+Literal in proc_macro - Rust
+proc_macro
+1.82.0-dev
+Literal
+Methods
+byte_character
+byte_string
+c_string
+character
+f32_suffixed
+f32_unsuffixed
+f64_suffixed
+f64_unsuffixed
+i128_suffixed
+i128_unsuffixed
+i16_suffixed
+i16_unsuffixed
+i32_suffixed
+i32_unsuffixed
+i64_suffixed
+i64_unsuffixed
+i8_suffixed
+i8_unsuffixed
+isize_suffixed
+isize_unsuffixed
+set_span
+span
+string
+subspan
+u128_suffixed
+u128_unsuffixed
+u16_suffixed
+u16_unsuffixed
+u32_suffixed
+u32_unsuffixed
+u64_suffixed
+u64_unsuffixed
+u8_suffixed
+u8_unsuffixed
+usize_suffixed
+usize_unsuffixed
+Trait Implementations
+Clone
+Debug
+Display
+From<Literal>
+FromStr
+Auto Trait Implementations
+!Send
+!Sync
+Freeze
+RefUnwindSafe
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+ToString
+TryFrom<U>
+TryInto<U>
+In crate proc_macro
+Struct
+proc_macro
+::
+Literal
+Copy item path
+1.29.0
+·
+source
+·
+[
+−
+]
+pub struct Literal(
+/* private fields */
+);
+Expand description
+A literal string (
+"hello"
+), byte string (
+b"hello"
+),
+character (
+'a'
+), byte character (
+b'a'
+), an integer or floating point number
+with or without a suffix (
+1
+,
+1u8
+,
+2.3
+,
+2.3f32
+).
+Boolean literals like
+true
+and
+false
+do not belong here, they are
+Ident
+s.
+Implementations
+§
+source
+§
+impl
+Literal
+1.29.0
+·
+source
+pub fn
+u8_suffixed
+(n:
+u8
+) ->
+Literal
+Creates a new suffixed integer literal with the specified value.
+This function will create an integer like
+1u32
+where the integer
+value specified is the first part of the token and the integral is
+also suffixed at the end.
+Literals created from negative numbers might not survive round-trips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+u16_suffixed
+(n:
+u16
+) ->
+Literal
+Creates a new suffixed integer literal with the specified value.
+This function will create an integer like
+1u32
+where the integer
+value specified is the first part of the token and the integral is
+also suffixed at the end.
+Literals created from negative numbers might not survive round-trips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+u32_suffixed
+(n:
+u32
+) ->
+Literal
+Creates a new suffixed integer literal with the specified value.
+This function will create an integer like
+1u32
+where the integer
+value specified is the first part of the token and the integral is
+also suffixed at the end.
+Literals created from negative numbers might not survive round-trips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+u64_suffixed
+(n:
+u64
+) ->
+Literal
+Creates a new suffixed integer literal with the specified value.
+This function will create an integer like
+1u32
+where the integer
+value specified is the first part of the token and the integral is
+also suffixed at the end.
+Literals created from negative numbers might not survive round-trips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+u128_suffixed
+(n:
+u128
+) ->
+Literal
+Creates a new suffixed integer literal with the specified value.
+This function will create an integer like
+1u32
+where the integer
+value specified is the first part of the token and the integral is
+also suffixed at the end.
+Literals created from negative numbers might not survive round-trips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+usize_suffixed
+(n:
+usize
+) ->
+Literal
+Creates a new suffixed integer literal with the specified value.
+This function will create an integer like
+1u32
+where the integer
+value specified is the first part of the token and the integral is
+also suffixed at the end.
+Literals created from negative numbers might not survive round-trips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+i8_suffixed
+(n:
+i8
+) ->
+Literal
+Creates a new suffixed integer literal with the specified value.
+This function will create an integer like
+1u32
+where the integer
+value specified is the first part of the token and the integral is
+also suffixed at the end.
+Literals created from negative numbers might not survive round-trips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+i16_suffixed
+(n:
+i16
+) ->
+Literal
+Creates a new suffixed integer literal with the specified value.
+This function will create an integer like
+1u32
+where the integer
+value specified is the first part of the token and the integral is
+also suffixed at the end.
+Literals created from negative numbers might not survive round-trips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+i32_suffixed
+(n:
+i32
+) ->
+Literal
+Creates a new suffixed integer literal with the specified value.
+This function will create an integer like
+1u32
+where the integer
+value specified is the first part of the token and the integral is
+also suffixed at the end.
+Literals created from negative numbers might not survive round-trips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+i64_suffixed
+(n:
+i64
+) ->
+Literal
+Creates a new suffixed integer literal with the specified value.
+This function will create an integer like
+1u32
+where the integer
+value specified is the first part of the token and the integral is
+also suffixed at the end.
+Literals created from negative numbers might not survive round-trips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+i128_suffixed
+(n:
+i128
+) ->
+Literal
+Creates a new suffixed integer literal with the specified value.
+This function will create an integer like
+1u32
+where the integer
+value specified is the first part of the token and the integral is
+also suffixed at the end.
+Literals created from negative numbers might not survive round-trips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+isize_suffixed
+(n:
+isize
+) ->
+Literal
+Creates a new suffixed integer literal with the specified value.
+This function will create an integer like
+1u32
+where the integer
+value specified is the first part of the token and the integral is
+also suffixed at the end.
+Literals created from negative numbers might not survive round-trips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+u8_unsuffixed
+(n:
+u8
+) ->
+Literal
+Creates a new unsuffixed integer literal with the specified value.
+This function will create an integer like
+1
+where the integer
+value specified is the first part of the token. No suffix is
+specified on this token, meaning that invocations like
+Literal::i8_unsuffixed(1)
+are equivalent to
+Literal::u32_unsuffixed(1)
+.
+Literals created from negative numbers might not survive rountrips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+u16_unsuffixed
+(n:
+u16
+) ->
+Literal
+Creates a new unsuffixed integer literal with the specified value.
+This function will create an integer like
+1
+where the integer
+value specified is the first part of the token. No suffix is
+specified on this token, meaning that invocations like
+Literal::i8_unsuffixed(1)
+are equivalent to
+Literal::u32_unsuffixed(1)
+.
+Literals created from negative numbers might not survive rountrips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+u32_unsuffixed
+(n:
+u32
+) ->
+Literal
+Creates a new unsuffixed integer literal with the specified value.
+This function will create an integer like
+1
+where the integer
+value specified is the first part of the token. No suffix is
+specified on this token, meaning that invocations like
+Literal::i8_unsuffixed(1)
+are equivalent to
+Literal::u32_unsuffixed(1)
+.
+Literals created from negative numbers might not survive rountrips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+u64_unsuffixed
+(n:
+u64
+) ->
+Literal
+Creates a new unsuffixed integer literal with the specified value.
+This function will create an integer like
+1
+where the integer
+value specified is the first part of the token. No suffix is
+specified on this token, meaning that invocations like
+Literal::i8_unsuffixed(1)
+are equivalent to
+Literal::u32_unsuffixed(1)
+.
+Literals created from negative numbers might not survive rountrips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+u128_unsuffixed
+(n:
+u128
+) ->
+Literal
+Creates a new unsuffixed integer literal with the specified value.
+This function will create an integer like
+1
+where the integer
+value specified is the first part of the token. No suffix is
+specified on this token, meaning that invocations like
+Literal::i8_unsuffixed(1)
+are equivalent to
+Literal::u32_unsuffixed(1)
+.
+Literals created from negative numbers might not survive rountrips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+usize_unsuffixed
+(n:
+usize
+) ->
+Literal
+Creates a new unsuffixed integer literal with the specified value.
+This function will create an integer like
+1
+where the integer
+value specified is the first part of the token. No suffix is
+specified on this token, meaning that invocations like
+Literal::i8_unsuffixed(1)
+are equivalent to
+Literal::u32_unsuffixed(1)
+.
+Literals created from negative numbers might not survive rountrips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+i8_unsuffixed
+(n:
+i8
+) ->
+Literal
+Creates a new unsuffixed integer literal with the specified value.
+This function will create an integer like
+1
+where the integer
+value specified is the first part of the token. No suffix is
+specified on this token, meaning that invocations like
+Literal::i8_unsuffixed(1)
+are equivalent to
+Literal::u32_unsuffixed(1)
+.
+Literals created from negative numbers might not survive rountrips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+i16_unsuffixed
+(n:
+i16
+) ->
+Literal
+Creates a new unsuffixed integer literal with the specified value.
+This function will create an integer like
+1
+where the integer
+value specified is the first part of the token. No suffix is
+specified on this token, meaning that invocations like
+Literal::i8_unsuffixed(1)
+are equivalent to
+Literal::u32_unsuffixed(1)
+.
+Literals created from negative numbers might not survive rountrips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+i32_unsuffixed
+(n:
+i32
+) ->
+Literal
+Creates a new unsuffixed integer literal with the specified value.
+This function will create an integer like
+1
+where the integer
+value specified is the first part of the token. No suffix is
+specified on this token, meaning that invocations like
+Literal::i8_unsuffixed(1)
+are equivalent to
+Literal::u32_unsuffixed(1)
+.
+Literals created from negative numbers might not survive rountrips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+i64_unsuffixed
+(n:
+i64
+) ->
+Literal
+Creates a new unsuffixed integer literal with the specified value.
+This function will create an integer like
+1
+where the integer
+value specified is the first part of the token. No suffix is
+specified on this token, meaning that invocations like
+Literal::i8_unsuffixed(1)
+are equivalent to
+Literal::u32_unsuffixed(1)
+.
+Literals created from negative numbers might not survive rountrips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+i128_unsuffixed
+(n:
+i128
+) ->
+Literal
+Creates a new unsuffixed integer literal with the specified value.
+This function will create an integer like
+1
+where the integer
+value specified is the first part of the token. No suffix is
+specified on this token, meaning that invocations like
+Literal::i8_unsuffixed(1)
+are equivalent to
+Literal::u32_unsuffixed(1)
+.
+Literals created from negative numbers might not survive rountrips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+isize_unsuffixed
+(n:
+isize
+) ->
+Literal
+Creates a new unsuffixed integer literal with the specified value.
+This function will create an integer like
+1
+where the integer
+value specified is the first part of the token. No suffix is
+specified on this token, meaning that invocations like
+Literal::i8_unsuffixed(1)
+are equivalent to
+Literal::u32_unsuffixed(1)
+.
+Literals created from negative numbers might not survive rountrips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+Literals created through this method have the
+Span::call_site()
+span by default, which can be configured with the
+set_span
+method
+below.
+1.29.0
+·
+source
+pub fn
+f32_unsuffixed
+(n:
+f32
+) ->
+Literal
+Creates a new unsuffixed floating-point literal.
+This constructor is similar to those like
+Literal::i8_unsuffixed
+where
+the float’s value is emitted directly into the token but no suffix is
+used, so it may be inferred to be a
+f64
+later in the compiler.
+Literals created from negative numbers might not survive rountrips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+§
+Panics
+This function requires that the specified float is finite, for
+example if it is infinity or NaN this function will panic.
+1.29.0
+·
+source
+pub fn
+f32_suffixed
+(n:
+f32
+) ->
+Literal
+Creates a new suffixed floating-point literal.
+This constructor will create a literal like
+1.0f32
+where the value
+specified is the preceding part of the token and
+f32
+is the suffix of
+the token. This token will always be inferred to be an
+f32
+in the
+compiler.
+Literals created from negative numbers might not survive rountrips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+§
+Panics
+This function requires that the specified float is finite, for
+example if it is infinity or NaN this function will panic.
+1.29.0
+·
+source
+pub fn
+f64_unsuffixed
+(n:
+f64
+) ->
+Literal
+Creates a new unsuffixed floating-point literal.
+This constructor is similar to those like
+Literal::i8_unsuffixed
+where
+the float’s value is emitted directly into the token but no suffix is
+used, so it may be inferred to be a
+f64
+later in the compiler.
+Literals created from negative numbers might not survive rountrips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+§
+Panics
+This function requires that the specified float is finite, for
+example if it is infinity or NaN this function will panic.
+1.29.0
+·
+source
+pub fn
+f64_suffixed
+(n:
+f64
+) ->
+Literal
+Creates a new suffixed floating-point literal.
+This constructor will create a literal like
+1.0f64
+where the value
+specified is the preceding part of the token and
+f64
+is the suffix of
+the token. This token will always be inferred to be an
+f64
+in the
+compiler.
+Literals created from negative numbers might not survive rountrips through
+TokenStream
+or strings and may be broken into two tokens (
+-
+and positive literal).
+§
+Panics
+This function requires that the specified float is finite, for
+example if it is infinity or NaN this function will panic.
+1.29.0
+·
+source
+pub fn
+string
+(string: &
+str
+) ->
+Literal
+String literal.
+1.29.0
+·
+source
+pub fn
+character
+(ch:
+char
+) ->
+Literal
+Character literal.
+1.79.0
+·
+source
+pub fn
+byte_character
+(byte:
+u8
+) ->
+Literal
+Byte character literal.
+1.29.0
+·
+source
+pub fn
+byte_string
+(bytes: &[
+u8
+]) ->
+Literal
+Byte string literal.
+1.79.0
+·
+source
+pub fn
+c_string
+(string: &
+CStr
+) ->
+Literal
+C string literal.
+1.29.0
+·
+source
+pub fn
+span
+(&self) ->
+Span
+Returns the span encompassing this literal.
+1.29.0
+·
+source
+pub fn
+set_span
+(&mut self, span:
+Span
+)
+Configures the span associated for this literal.
+source
+pub fn
+subspan
+<R:
+RangeBounds
+<
+usize
+>>(&self, range: R) ->
+Option
+<
+Span
+>
+🔬
+This is a nightly-only experimental API. (
+proc_macro_span
+#54725
+)
+Returns a
+Span
+that is a subset of
+self.span()
+containing only the
+source bytes in range
+range
+. Returns
+None
+if the would-be trimmed
+span is outside the bounds of
+self
+.
+Trait Implementations
+§
+1.29.0
+·
+source
+§
+impl
+Clone
+for
+Literal
+source
+§
+fn
+clone
+(&self) ->
+Literal
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+1.29.0
+·
+source
+§
+impl
+Debug
+for
+Literal
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+1.29.0
+·
+source
+§
+impl
+Display
+for
+Literal
+Prints the literal as a string that should be losslessly convertible
+back into the same literal (except for possible rounding for floating point literals).
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+1.29.0
+·
+source
+§
+impl
+From
+<
+Literal
+> for
+TokenTree
+source
+§
+fn
+from
+(g:
+Literal
+) ->
+TokenTree
+Converts to this type from the input type.
+1.54.0
+·
+source
+§
+impl
+FromStr
+for
+Literal
+Parse a single literal from its stringified representation.
+In order to parse successfully, the input string must not contain anything
+but the literal token. Specifically, it must not contain whitespace or
+comments in addition to the literal.
+The resulting literal token will have a
+Span::call_site()
+span.
+NOTE: some errors may cause panics instead of returning
+LexError
+. We
+reserve the right to change these errors into
+LexError
+s later.
+§
+type
+Err
+=
+LexError
+The associated error which can be returned from parsing.
+source
+§
+fn
+from_str
+(src: &
+str
+) ->
+Result
+<Self,
+LexError
+>
+Parses a string
+s
+to return a value of this type.
+Read more
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+Literal
+§
+impl
+RefUnwindSafe
+for
+Literal
+§
+impl !
+Send
+for
+Literal
+§
+impl !
+Sync
+for
+Literal
+§
+impl
+Unpin
+for
+Literal
+§
+impl
+UnwindSafe
+for
+Literal
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T>
+ToString
+for T
+where
+    T:
+Display
++ ?
+Sized
+,
+source
+§
+default fn
+to_string
+(&self) ->
+String
+Converts the given value to a
+String
+.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/fn.is_available.html
+
+is_available in proc_macro - Rust
+proc_macro
+1.82.0-dev
+Function
+proc_macro
+::
+is_available
+Copy item path
+1.57.0
+·
+source
+·
+[
+−
+]
+pub fn is_available() ->
+bool
+Expand description
+Determines whether proc_macro has been made accessible to the currently
+running program.
+The proc_macro crate is only intended for use inside the implementation of
+procedural macros. All the functions in this crate panic if invoked from
+outside of a procedural macro, such as from a build script or unit test or
+ordinary Rust binary.
+With consideration for Rust libraries that are designed to support both
+macro and non-macro use cases,
+proc_macro::is_available()
+provides a
+non-panicking way to detect whether the infrastructure required to use the
+API of proc_macro is presently available. Returns true if invoked from
+inside of a procedural macro, false if invoked from any other binary.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/trait.MultiSpan.html
+
+MultiSpan in proc_macro - Rust
+proc_macro
+1.82.0-dev
+MultiSpan
+Required Methods
+into_spans
+Implementations on Foreign Types
+&'a [Span]
+Vec<Span>
+Implementors
+In crate proc_macro
+Trait
+proc_macro
+::
+MultiSpan
+Copy item path
+source
+·
+[
+−
+]
+pub trait MultiSpan {
+    // Required method
+    fn
+into_spans
+(self) ->
+Vec
+<
+Span
+>;
+}
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Expand description
+Trait implemented by types that can be converted into a set of
+Span
+s.
+Required Methods
+§
+source
+fn
+into_spans
+(self) ->
+Vec
+<
+Span
+>
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Converts
+self
+into a
+Vec<Span>
+.
+Implementations on Foreign Types
+§
+source
+§
+impl
+MultiSpan
+for
+Vec
+<
+Span
+>
+source
+§
+fn
+into_spans
+(self) ->
+Vec
+<
+Span
+>
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+source
+§
+impl<'a>
+MultiSpan
+for &'a [
+Span
+]
+source
+§
+fn
+into_spans
+(self) ->
+Vec
+<
+Span
+>
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Implementors
+§
+source
+§
+impl
+MultiSpan
+for
+Span
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/enum.Level.html
+
+Level in proc_macro - Rust
+proc_macro
+1.82.0-dev
+Level
+Variants
+Error
+Help
+Note
+Warning
+Trait Implementations
+Clone
+Copy
+Debug
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In crate proc_macro
+Enum
+proc_macro
+::
+Level
+Copy item path
+source
+·
+[
+−
+]
+#[non_exhaustive]
+pub enum Level {
+    Error,
+    Warning,
+    Note,
+    Help,
+}
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Expand description
+An enum representing a diagnostic level.
+Variants (Non-exhaustive)
+§
+This enum is marked as non-exhaustive
+Non-exhaustive enums could have additional variants added in future. Therefore, when matching against variants of non-exhaustive enums, an extra wildcard arm must be added to account for any future variants.
+§
+Error
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+An error.
+§
+Warning
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+A warning.
+§
+Note
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+A note.
+§
+Help
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+A help message.
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+Level
+source
+§
+fn
+clone
+(&self) ->
+Level
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+Level
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Copy
+for
+Level
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+Level
+§
+impl
+RefUnwindSafe
+for
+Level
+§
+impl
+Send
+for
+Level
+§
+impl
+Sync
+for
+Level
+§
+impl
+Unpin
+for
+Level
+§
+impl
+UnwindSafe
+for
+Level
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/enum.TokenTree.html
+
+TokenTree in proc_macro - Rust
+proc_macro
+1.82.0-dev
+TokenTree
+Variants
+Group
+Ident
+Literal
+Punct
+Methods
+set_span
+span
+Trait Implementations
+!Send
+!Sync
+Clone
+Debug
+Display
+Extend<TokenTree>
+From<Group>
+From<Ident>
+From<Literal>
+From<Punct>
+From<TokenTree>
+FromIterator<TokenTree>
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+ToString
+TryFrom<U>
+TryInto<U>
+In crate proc_macro
+Enum
+proc_macro
+::
+TokenTree
+Copy item path
+1.29.0
+·
+source
+·
+[
+−
+]
+pub enum TokenTree {
+    Group(
+Group
+),
+    Ident(
+Ident
+),
+    Punct(
+Punct
+),
+    Literal(
+Literal
+),
+}
+Expand description
+A single token or a delimited sequence of token trees (e.g.,
+[1, (), ..]
+).
+Variants
+§
+§
+1.29.0
+Group(
+Group
+)
+A token stream surrounded by bracket delimiters.
+§
+1.29.0
+Ident(
+Ident
+)
+An identifier.
+§
+1.29.0
+Punct(
+Punct
+)
+A single punctuation character (
++
+,
+,
+,
+$
+, etc.).
+§
+1.29.0
+Literal(
+Literal
+)
+A literal character (
+'a'
+), string (
+"hello"
+), number (
+2.3
+), etc.
+Implementations
+§
+source
+§
+impl
+TokenTree
+1.29.0
+·
+source
+pub fn
+span
+(&self) ->
+Span
+Returns the span of this tree, delegating to the
+span
+method of
+the contained token or a delimited stream.
+1.29.0
+·
+source
+pub fn
+set_span
+(&mut self, span:
+Span
+)
+Configures the span for
+only this token
+.
+Note that if this token is a
+Group
+then this method will not configure
+the span of each of the internal tokens, this will simply delegate to
+the
+set_span
+method of each variant.
+Trait Implementations
+§
+1.29.0
+·
+source
+§
+impl
+Clone
+for
+TokenTree
+source
+§
+fn
+clone
+(&self) ->
+TokenTree
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+1.29.0
+·
+source
+§
+impl
+Debug
+for
+TokenTree
+Prints token tree in a form convenient for debugging.
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+1.29.0
+·
+source
+§
+impl
+Display
+for
+TokenTree
+Prints the token tree as a string that is supposed to be losslessly convertible back
+into the same token tree (modulo spans), except for possibly
+TokenTree::Group
+s
+with
+Delimiter::None
+delimiters and negative numeric literals.
+Note: the exact form of the output is subject to change, e.g. there might
+be changes in the whitespace used between tokens. Therefore, you should
+not
+do any kind of simple substring matching on the output string (as
+produced by
+to_string
+) to implement a proc macro, because that matching
+might stop working if such changes happen. Instead, you should work at the
+TokenTree
+level, e.g. matching against
+TokenTree::Ident
+,
+TokenTree::Punct
+, or
+TokenTree::Literal
+.
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+1.30.0
+·
+source
+§
+impl
+Extend
+<
+TokenTree
+> for
+TokenStream
+source
+§
+fn
+extend
+<I:
+IntoIterator
+<Item =
+TokenTree
+>>(&mut self, trees: I)
+Extends a collection with the contents of an iterator.
+Read more
+source
+§
+fn
+extend_one
+(&mut self, item: A)
+🔬
+This is a nightly-only experimental API. (
+extend_one
+#72631
+)
+Extends a collection with exactly one element.
+source
+§
+fn
+extend_reserve
+(&mut self, additional:
+usize
+)
+🔬
+This is a nightly-only experimental API. (
+extend_one
+#72631
+)
+Reserves capacity in a collection for the given number of additional elements.
+Read more
+1.29.0
+·
+source
+§
+impl
+From
+<
+Group
+> for
+TokenTree
+source
+§
+fn
+from
+(g:
+Group
+) ->
+TokenTree
+Converts to this type from the input type.
+1.29.0
+·
+source
+§
+impl
+From
+<
+Ident
+> for
+TokenTree
+source
+§
+fn
+from
+(g:
+Ident
+) ->
+TokenTree
+Converts to this type from the input type.
+1.29.0
+·
+source
+§
+impl
+From
+<
+Literal
+> for
+TokenTree
+source
+§
+fn
+from
+(g:
+Literal
+) ->
+TokenTree
+Converts to this type from the input type.
+1.29.0
+·
+source
+§
+impl
+From
+<
+Punct
+> for
+TokenTree
+source
+§
+fn
+from
+(g:
+Punct
+) ->
+TokenTree
+Converts to this type from the input type.
+1.29.0
+·
+source
+§
+impl
+From
+<
+TokenTree
+> for
+TokenStream
+Creates a token stream containing a single token tree.
+source
+§
+fn
+from
+(tree:
+TokenTree
+) ->
+TokenStream
+Converts to this type from the input type.
+1.29.0
+·
+source
+§
+impl
+FromIterator
+<
+TokenTree
+> for
+TokenStream
+Collects a number of token trees into a single stream.
+source
+§
+fn
+from_iter
+<I:
+IntoIterator
+<Item =
+TokenTree
+>>(trees: I) -> Self
+Creates a value from an iterator.
+Read more
+1.29.0
+·
+source
+§
+impl !
+Send
+for
+TokenTree
+1.29.0
+·
+source
+§
+impl !
+Sync
+for
+TokenTree
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TokenTree
+§
+impl
+RefUnwindSafe
+for
+TokenTree
+§
+impl
+Unpin
+for
+TokenTree
+§
+impl
+UnwindSafe
+for
+TokenTree
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T>
+ToString
+for T
+where
+    T:
+Display
++ ?
+Sized
+,
+source
+§
+default fn
+to_string
+(&self) ->
+String
+Converts the given value to a
+String
+.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/struct.Diagnostic.html
+
+Diagnostic in proc_macro - Rust
+proc_macro
+1.82.0-dev
+Diagnostic
+Methods
+children
+emit
+error
+help
+level
+message
+new
+note
+set_level
+set_message
+set_spans
+span_error
+span_help
+span_note
+span_warning
+spanned
+spans
+warning
+Trait Implementations
+Clone
+Debug
+Auto Trait Implementations
+!Send
+!Sync
+Freeze
+RefUnwindSafe
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In crate proc_macro
+Struct
+proc_macro
+::
+Diagnostic
+Copy item path
+source
+·
+[
+−
+]
+pub struct Diagnostic {
+/* private fields */
+}
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Expand description
+A structure representing a diagnostic message and associated children
+messages.
+Implementations
+§
+source
+§
+impl
+Diagnostic
+source
+pub fn
+new
+<T:
+Into
+<
+String
+>>(level:
+Level
+, message: T) ->
+Diagnostic
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Creates a new diagnostic with the given
+level
+and
+message
+.
+source
+pub fn
+spanned
+<S, T>(spans: S, level:
+Level
+, message: T) ->
+Diagnostic
+where
+    S:
+MultiSpan
+,
+    T:
+Into
+<
+String
+>,
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Creates a new diagnostic with the given
+level
+and
+message
+pointing to
+the given set of
+spans
+.
+source
+pub fn
+span_error
+<S, T>(self, spans: S, message: T) ->
+Diagnostic
+where
+    S:
+MultiSpan
+,
+    T:
+Into
+<
+String
+>,
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Adds a new child diagnostics message to
+self
+with the
+Level::Error
+level, and the given
+spans
+and
+message
+.
+source
+pub fn
+error
+<T:
+Into
+<
+String
+>>(self, message: T) ->
+Diagnostic
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Adds a new child diagnostic message to
+self
+with the
+Level::Error
+level, and the given
+message
+.
+source
+pub fn
+span_warning
+<S, T>(self, spans: S, message: T) ->
+Diagnostic
+where
+    S:
+MultiSpan
+,
+    T:
+Into
+<
+String
+>,
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Adds a new child diagnostics message to
+self
+with the
+Level::Warning
+level, and the given
+spans
+and
+message
+.
+source
+pub fn
+warning
+<T:
+Into
+<
+String
+>>(self, message: T) ->
+Diagnostic
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Adds a new child diagnostic message to
+self
+with the
+Level::Warning
+level, and the given
+message
+.
+source
+pub fn
+span_note
+<S, T>(self, spans: S, message: T) ->
+Diagnostic
+where
+    S:
+MultiSpan
+,
+    T:
+Into
+<
+String
+>,
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Adds a new child diagnostics message to
+self
+with the
+Level::Note
+level, and the given
+spans
+and
+message
+.
+source
+pub fn
+note
+<T:
+Into
+<
+String
+>>(self, message: T) ->
+Diagnostic
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Adds a new child diagnostic message to
+self
+with the
+Level::Note
+level, and the given
+message
+.
+source
+pub fn
+span_help
+<S, T>(self, spans: S, message: T) ->
+Diagnostic
+where
+    S:
+MultiSpan
+,
+    T:
+Into
+<
+String
+>,
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Adds a new child diagnostics message to
+self
+with the
+Level::Help
+level, and the given
+spans
+and
+message
+.
+source
+pub fn
+help
+<T:
+Into
+<
+String
+>>(self, message: T) ->
+Diagnostic
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Adds a new child diagnostic message to
+self
+with the
+Level::Help
+level, and the given
+message
+.
+source
+pub fn
+level
+(&self) ->
+Level
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Returns the diagnostic
+level
+for
+self
+.
+source
+pub fn
+set_level
+(&mut self, level:
+Level
+)
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Sets the level in
+self
+to
+level
+.
+source
+pub fn
+message
+(&self) -> &
+str
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Returns the message in
+self
+.
+source
+pub fn
+set_message
+<T:
+Into
+<
+String
+>>(&mut self, message: T)
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Sets the message in
+self
+to
+message
+.
+source
+pub fn
+spans
+(&self) -> &[
+Span
+]
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Returns the
+Span
+s in
+self
+.
+source
+pub fn
+set_spans
+<S:
+MultiSpan
+>(&mut self, spans: S)
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Sets the
+Span
+s in
+self
+to
+spans
+.
+source
+pub fn
+children
+(&self) -> Children<'_>
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Returns an iterator over the children diagnostics of
+self
+.
+source
+pub fn
+emit
+(self)
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Emit the diagnostic.
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+Diagnostic
+source
+§
+fn
+clone
+(&self) ->
+Diagnostic
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+Diagnostic
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+Diagnostic
+§
+impl
+RefUnwindSafe
+for
+Diagnostic
+§
+impl !
+Send
+for
+Diagnostic
+§
+impl !
+Sync
+for
+Diagnostic
+§
+impl
+Unpin
+for
+Diagnostic
+§
+impl
+UnwindSafe
+for
+Diagnostic
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/struct.SourceFile.html
+
+SourceFile in proc_macro - Rust
+proc_macro
+1.82.0-dev
+SourceFile
+Methods
+is_real
+path
+Trait Implementations
+Clone
+Debug
+Eq
+PartialEq
+Auto Trait Implementations
+!Send
+!Sync
+Freeze
+RefUnwindSafe
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In crate proc_macro
+Struct
+proc_macro
+::
+SourceFile
+Copy item path
+source
+·
+[
+−
+]
+pub struct SourceFile(
+/* private fields */
+);
+🔬
+This is a nightly-only experimental API. (
+proc_macro_span
+#54725
+)
+Expand description
+The source file of a given
+Span
+.
+Implementations
+§
+source
+§
+impl
+SourceFile
+source
+pub fn
+path
+(&self) ->
+PathBuf
+🔬
+This is a nightly-only experimental API. (
+proc_macro_span
+#54725
+)
+Gets the path to this source file.
+§
+Note
+If the code span associated with this
+SourceFile
+was generated by an external macro, this
+macro, this might not be an actual path on the filesystem. Use
+is_real
+to check.
+Also note that even if
+is_real
+returns
+true
+, if
+--remap-path-prefix
+was passed on
+the command line, the path as given might not actually be valid.
+source
+pub fn
+is_real
+(&self) ->
+bool
+🔬
+This is a nightly-only experimental API. (
+proc_macro_span
+#54725
+)
+Returns
+true
+if this source file is a real source file, and not generated by an external
+macro’s expansion.
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+SourceFile
+source
+§
+fn
+clone
+(&self) ->
+SourceFile
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+SourceFile
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+PartialEq
+for
+SourceFile
+source
+§
+fn
+eq
+(&self, other:
+&Self
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+Eq
+for
+SourceFile
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+SourceFile
+§
+impl
+RefUnwindSafe
+for
+SourceFile
+§
+impl !
+Send
+for
+SourceFile
+§
+impl !
+Sync
+for
+SourceFile
+§
+impl
+Unpin
+for
+SourceFile
+§
+impl
+UnwindSafe
+for
+SourceFile
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/struct.TokenStream.html
+
+TokenStream in proc_macro - Rust
+proc_macro
+1.82.0-dev
+TokenStream
+Methods
+expand_expr
+is_empty
+new
+Trait Implementations
+!Send
+!Sync
+Clone
+Debug
+Default
+Display
+Extend<TokenStream>
+Extend<TokenTree>
+From<TokenTree>
+FromIterator<TokenStream>
+FromIterator<TokenTree>
+FromStr
+IntoIterator
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+ToString
+TryFrom<U>
+TryInto<U>
+In crate proc_macro
+Struct
+proc_macro
+::
+TokenStream
+Copy item path
+1.15.0
+·
+source
+·
+[
+−
+]
+pub struct TokenStream(
+/* private fields */
+);
+Expand description
+The main type provided by this crate, representing an abstract stream of
+tokens, or, more specifically, a sequence of token trees.
+The type provides interfaces for iterating over those token trees and, conversely,
+collecting a number of token trees into one stream.
+This is both the input and output of
+#[proc_macro]
+,
+#[proc_macro_attribute]
+and
+#[proc_macro_derive]
+definitions.
+Implementations
+§
+source
+§
+impl
+TokenStream
+1.29.0
+·
+source
+pub fn
+new
+() ->
+TokenStream
+Returns an empty
+TokenStream
+containing no token trees.
+1.29.0
+·
+source
+pub fn
+is_empty
+(&self) ->
+bool
+Checks if this
+TokenStream
+is empty.
+source
+pub fn
+expand_expr
+(&self) ->
+Result
+<
+TokenStream
+,
+ExpandError
+>
+🔬
+This is a nightly-only experimental API. (
+proc_macro_expand
+#90765
+)
+Parses this
+TokenStream
+as an expression and attempts to expand any
+macros within it. Returns the expanded
+TokenStream
+.
+Currently only expressions expanding to literals will succeed, although
+this may be relaxed in the future.
+NOTE: In error conditions,
+expand_expr
+may leave macros unexpanded,
+report an error, failing compilation, and/or return an
+Err(..)
+. The
+specific behavior for any error condition, and what conditions are
+considered errors, is unspecified and may change in the future.
+Trait Implementations
+§
+1.15.0
+·
+source
+§
+impl
+Clone
+for
+TokenStream
+source
+§
+fn
+clone
+(&self) ->
+TokenStream
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+1.15.0
+·
+source
+§
+impl
+Debug
+for
+TokenStream
+Prints token in a form convenient for debugging.
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+1.45.0
+·
+source
+§
+impl
+Default
+for
+TokenStream
+source
+§
+fn
+default
+() -> Self
+Returns the “default value” for a type.
+Read more
+1.15.0
+·
+source
+§
+impl
+Display
+for
+TokenStream
+Prints the token stream as a string that is supposed to be losslessly convertible back
+into the same token stream (modulo spans), except for possibly
+TokenTree::Group
+s
+with
+Delimiter::None
+delimiters and negative numeric literals.
+Note: the exact form of the output is subject to change, e.g. there might
+be changes in the whitespace used between tokens. Therefore, you should
+not
+do any kind of simple substring matching on the output string (as
+produced by
+to_string
+) to implement a proc macro, because that matching
+might stop working if such changes happen. Instead, you should work at the
+TokenTree
+level, e.g. matching against
+TokenTree::Ident
+,
+TokenTree::Punct
+, or
+TokenTree::Literal
+.
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+1.30.0
+·
+source
+§
+impl
+Extend
+<
+TokenStream
+> for
+TokenStream
+source
+§
+fn
+extend
+<I:
+IntoIterator
+<Item =
+TokenStream
+>>(&mut self, streams: I)
+Extends a collection with the contents of an iterator.
+Read more
+source
+§
+fn
+extend_one
+(&mut self, item: A)
+🔬
+This is a nightly-only experimental API. (
+extend_one
+#72631
+)
+Extends a collection with exactly one element.
+source
+§
+fn
+extend_reserve
+(&mut self, additional:
+usize
+)
+🔬
+This is a nightly-only experimental API. (
+extend_one
+#72631
+)
+Reserves capacity in a collection for the given number of additional elements.
+Read more
+1.30.0
+·
+source
+§
+impl
+Extend
+<
+TokenTree
+> for
+TokenStream
+source
+§
+fn
+extend
+<I:
+IntoIterator
+<Item =
+TokenTree
+>>(&mut self, trees: I)
+Extends a collection with the contents of an iterator.
+Read more
+source
+§
+fn
+extend_one
+(&mut self, item: A)
+🔬
+This is a nightly-only experimental API. (
+extend_one
+#72631
+)
+Extends a collection with exactly one element.
+source
+§
+fn
+extend_reserve
+(&mut self, additional:
+usize
+)
+🔬
+This is a nightly-only experimental API. (
+extend_one
+#72631
+)
+Reserves capacity in a collection for the given number of additional elements.
+Read more
+1.29.0
+·
+source
+§
+impl
+From
+<
+TokenTree
+> for
+TokenStream
+Creates a token stream containing a single token tree.
+source
+§
+fn
+from
+(tree:
+TokenTree
+) ->
+TokenStream
+Converts to this type from the input type.
+1.15.0
+·
+source
+§
+impl
+FromIterator
+<
+TokenStream
+> for
+TokenStream
+A “flattening” operation on token streams, collects token trees
+from multiple token streams into a single stream.
+source
+§
+fn
+from_iter
+<I:
+IntoIterator
+<Item =
+TokenStream
+>>(streams: I) -> Self
+Creates a value from an iterator.
+Read more
+1.29.0
+·
+source
+§
+impl
+FromIterator
+<
+TokenTree
+> for
+TokenStream
+Collects a number of token trees into a single stream.
+source
+§
+fn
+from_iter
+<I:
+IntoIterator
+<Item =
+TokenTree
+>>(trees: I) -> Self
+Creates a value from an iterator.
+Read more
+1.15.0
+·
+source
+§
+impl
+FromStr
+for
+TokenStream
+Attempts to break the string into tokens and parse those tokens into a token stream.
+May fail for a number of reasons, for example, if the string contains unbalanced delimiters
+or characters not existing in the language.
+All tokens in the parsed stream get
+Span::call_site()
+spans.
+NOTE: some errors may cause panics instead of returning
+LexError
+. We reserve the right to
+change these errors into
+LexError
+s later.
+§
+type
+Err
+=
+LexError
+The associated error which can be returned from parsing.
+source
+§
+fn
+from_str
+(src: &
+str
+) ->
+Result
+<
+TokenStream
+,
+LexError
+>
+Parses a string
+s
+to return a value of this type.
+Read more
+1.29.0
+·
+source
+§
+impl
+IntoIterator
+for
+TokenStream
+§
+type
+Item
+=
+TokenTree
+The type of the elements being iterated over.
+§
+type
+IntoIter
+=
+IntoIter
+Which kind of iterator are we turning this into?
+source
+§
+fn
+into_iter
+(self) ->
+IntoIter
+ⓘ
+Creates an iterator from a value.
+Read more
+1.15.0
+·
+source
+§
+impl !
+Send
+for
+TokenStream
+1.15.0
+·
+source
+§
+impl !
+Sync
+for
+TokenStream
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TokenStream
+§
+impl
+RefUnwindSafe
+for
+TokenStream
+§
+impl
+Unpin
+for
+TokenStream
+§
+impl
+UnwindSafe
+for
+TokenStream
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T>
+ToString
+for T
+where
+    T:
+Display
++ ?
+Sized
+,
+source
+§
+default fn
+to_string
+(&self) ->
+String
+Converts the given value to a
+String
+.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/struct.Span.html
+
+Span in proc_macro - Rust
+proc_macro
+1.82.0-dev
+Span
+Methods
+byte_range
+call_site
+column
+def_site
+end
+eq
+error
+help
+join
+line
+located_at
+mixed_site
+note
+parent
+resolved_at
+source
+source_file
+source_text
+start
+warning
+Trait Implementations
+!Send
+!Sync
+Clone
+Copy
+Debug
+MultiSpan
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In crate proc_macro
+Struct
+proc_macro
+::
+Span
+Copy item path
+1.29.0
+·
+source
+·
+[
+−
+]
+pub struct Span(
+/* private fields */
+);
+Expand description
+A region of source code, along with macro expansion information.
+Implementations
+§
+source
+§
+impl
+Span
+source
+pub fn
+def_site
+() ->
+Span
+🔬
+This is a nightly-only experimental API. (
+proc_macro_def_site
+#54724
+)
+A span that resolves at the macro definition site.
+1.29.0
+·
+source
+pub fn
+call_site
+() ->
+Span
+The span of the invocation of the current procedural macro.
+Identifiers created with this span will be resolved as if they were written
+directly at the macro call location (call-site hygiene) and other code
+at the macro call site will be able to refer to them as well.
+1.45.0
+·
+source
+pub fn
+mixed_site
+() ->
+Span
+A span that represents
+macro_rules
+hygiene, and sometimes resolves at the macro
+definition site (local variables, labels,
+$crate
+) and sometimes at the macro
+call site (everything else).
+The span location is taken from the call-site.
+source
+pub fn
+source_file
+(&self) ->
+SourceFile
+🔬
+This is a nightly-only experimental API. (
+proc_macro_span
+#54725
+)
+The original source file into which this span points.
+source
+pub fn
+parent
+(&self) ->
+Option
+<
+Span
+>
+🔬
+This is a nightly-only experimental API. (
+proc_macro_span
+#54725
+)
+The
+Span
+for the tokens in the previous macro expansion from which
+self
+was generated from, if any.
+source
+pub fn
+source
+(&self) ->
+Span
+🔬
+This is a nightly-only experimental API. (
+proc_macro_span
+#54725
+)
+The span for the origin source code that
+self
+was generated from. If
+this
+Span
+wasn’t generated from other macro expansions then the return
+value is the same as
+*self
+.
+source
+pub fn
+byte_range
+(&self) ->
+Range
+<
+usize
+>
+🔬
+This is a nightly-only experimental API. (
+proc_macro_span
+#54725
+)
+Returns the span’s byte position range in the source file.
+source
+pub fn
+start
+(&self) ->
+Span
+🔬
+This is a nightly-only experimental API. (
+proc_macro_span
+#54725
+)
+Creates an empty span pointing to directly before this span.
+source
+pub fn
+end
+(&self) ->
+Span
+🔬
+This is a nightly-only experimental API. (
+proc_macro_span
+#54725
+)
+Creates an empty span pointing to directly after this span.
+source
+pub fn
+line
+(&self) ->
+usize
+🔬
+This is a nightly-only experimental API. (
+proc_macro_span
+#54725
+)
+The one-indexed line of the source file where the span starts.
+To obtain the line of the span’s end, use
+span.end().line()
+.
+source
+pub fn
+column
+(&self) ->
+usize
+🔬
+This is a nightly-only experimental API. (
+proc_macro_span
+#54725
+)
+The one-indexed column of the source file where the span starts.
+To obtain the column of the span’s end, use
+span.end().column()
+.
+source
+pub fn
+join
+(&self, other:
+Span
+) ->
+Option
+<
+Span
+>
+🔬
+This is a nightly-only experimental API. (
+proc_macro_span
+#54725
+)
+Creates a new span encompassing
+self
+and
+other
+.
+Returns
+None
+if
+self
+and
+other
+are from different files.
+1.45.0
+·
+source
+pub fn
+resolved_at
+(&self, other:
+Span
+) ->
+Span
+Creates a new span with the same line/column information as
+self
+but
+that resolves symbols as though it were at
+other
+.
+1.45.0
+·
+source
+pub fn
+located_at
+(&self, other:
+Span
+) ->
+Span
+Creates a new span with the same name resolution behavior as
+self
+but
+with the line/column information of
+other
+.
+source
+pub fn
+eq
+(&self, other: &
+Span
+) ->
+bool
+🔬
+This is a nightly-only experimental API. (
+proc_macro_span
+#54725
+)
+Compares two spans to see if they’re equal.
+1.66.0
+·
+source
+pub fn
+source_text
+(&self) ->
+Option
+<
+String
+>
+Returns the source text behind a span. This preserves the original source
+code, including spaces and comments. It only returns a result if the span
+corresponds to real source code.
+Note: The observable result of a macro should only rely on the tokens and
+not on this source text. The result of this function is a best effort to
+be used for diagnostics only.
+source
+pub fn
+error
+<T:
+Into
+<
+String
+>>(self, message: T) ->
+Diagnostic
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Creates a new
+Diagnostic
+with the given
+message
+at the span
+self
+.
+source
+pub fn
+warning
+<T:
+Into
+<
+String
+>>(self, message: T) ->
+Diagnostic
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Creates a new
+Diagnostic
+with the given
+message
+at the span
+self
+.
+source
+pub fn
+note
+<T:
+Into
+<
+String
+>>(self, message: T) ->
+Diagnostic
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Creates a new
+Diagnostic
+with the given
+message
+at the span
+self
+.
+source
+pub fn
+help
+<T:
+Into
+<
+String
+>>(self, message: T) ->
+Diagnostic
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Creates a new
+Diagnostic
+with the given
+message
+at the span
+self
+.
+Trait Implementations
+§
+1.29.0
+·
+source
+§
+impl
+Clone
+for
+Span
+source
+§
+fn
+clone
+(&self) ->
+Span
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+1.29.0
+·
+source
+§
+impl
+Debug
+for
+Span
+Prints a span in a form convenient for debugging.
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+MultiSpan
+for
+Span
+source
+§
+fn
+into_spans
+(self) ->
+Vec
+<
+Span
+>
+🔬
+This is a nightly-only experimental API. (
+proc_macro_diagnostic
+#54140
+)
+Converts
+self
+into a
+Vec<Span>
+.
+1.29.0
+·
+source
+§
+impl
+Copy
+for
+Span
+1.29.0
+·
+source
+§
+impl !
+Send
+for
+Span
+1.29.0
+·
+source
+§
+impl !
+Sync
+for
+Span
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+Span
+§
+impl
+RefUnwindSafe
+for
+Span
+§
+impl
+Unpin
+for
+Span
+§
+impl
+UnwindSafe
+for
+Span
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/enum.Spacing.html
+
+Spacing in proc_macro - Rust
+proc_macro
+1.82.0-dev
+Spacing
+Variants
+Alone
+Joint
+Trait Implementations
+Clone
+Copy
+Debug
+Eq
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In crate proc_macro
+Enum
+proc_macro
+::
+Spacing
+Copy item path
+1.29.0
+·
+source
+·
+[
+−
+]
+pub enum Spacing {
+    Joint,
+    Alone,
+}
+Expand description
+Indicates whether a
+Punct
+token can join with the following token
+to form a multi-character operator.
+Variants
+§
+§
+1.29.0
+Joint
+A
+Punct
+token can join with the following token to form a multi-character operator.
+In token streams constructed using proc macro interfaces,
+Joint
+punctuation tokens can be
+followed by any other tokens. However, in token streams parsed from source code, the
+compiler will only set spacing to
+Joint
+in the following cases.
+When a
+Punct
+is immediately followed by another
+Punct
+without a whitespace. E.g.
++
+is
+Joint
+in
++=
+and
+++
+.
+When a single quote
+'
+is immediately followed by an identifier without a whitespace.
+E.g.
+'
+is
+Joint
+in
+'lifetime
+.
+This list may be extended in the future to enable more token combinations.
+§
+1.29.0
+Alone
+A
+Punct
+token cannot join with the following token to form a multi-character operator.
+Alone
+punctuation tokens can be followed by any other tokens. In token streams parsed
+from source code, the compiler will set spacing to
+Alone
+in all cases not covered by the
+conditions for
+Joint
+above. E.g.
++
+is
+Alone
+in
++ =
+,
++ident
+and
++()
+. In
+particular, tokens not followed by anything will be marked as
+Alone
+.
+Trait Implementations
+§
+1.29.0
+·
+source
+§
+impl
+Clone
+for
+Spacing
+source
+§
+fn
+clone
+(&self) ->
+Spacing
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+1.29.0
+·
+source
+§
+impl
+Debug
+for
+Spacing
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+1.29.0
+·
+source
+§
+impl
+PartialEq
+for
+Spacing
+source
+§
+fn
+eq
+(&self, other: &
+Spacing
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+1.29.0
+·
+source
+§
+impl
+Copy
+for
+Spacing
+1.29.0
+·
+source
+§
+impl
+Eq
+for
+Spacing
+1.29.0
+·
+source
+§
+impl
+StructuralPartialEq
+for
+Spacing
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+Spacing
+§
+impl
+RefUnwindSafe
+for
+Spacing
+§
+impl
+Send
+for
+Spacing
+§
+impl
+Sync
+for
+Spacing
+§
+impl
+Unpin
+for
+Spacing
+§
+impl
+UnwindSafe
+for
+Spacing
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/struct.LexError.html
+
+LexError in proc_macro - Rust
+proc_macro
+1.82.0-dev
+LexError
+Trait Implementations
+!Send
+!Sync
+Debug
+Display
+Error
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+From<T>
+Into<U>
+ToString
+TryFrom<U>
+TryInto<U>
+In crate proc_macro
+Struct
+proc_macro
+::
+LexError
+Copy item path
+1.15.0
+·
+source
+·
+[
+−
+]
+#[non_exhaustive]
+pub struct LexError;
+Expand description
+Error returned from
+TokenStream::from_str
+.
+Trait Implementations
+§
+1.15.0
+·
+source
+§
+impl
+Debug
+for
+LexError
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+1.44.0
+·
+source
+§
+impl
+Display
+for
+LexError
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+1.44.0
+·
+source
+§
+impl
+Error
+for
+LexError
+1.30.0
+·
+source
+§
+fn
+source
+(&self) ->
+Option
+<&(dyn
+Error
++ 'static)>
+Returns the lower-level source of this error, if any.
+Read more
+1.0.0
+·
+source
+§
+fn
+description
+(&self) -> &
+str
+👎
+Deprecated since 1.42.0: use the Display impl or to_string()
+Read more
+1.0.0
+·
+source
+§
+fn
+cause
+(&self) ->
+Option
+<&dyn
+Error
+>
+👎
+Deprecated since 1.33.0: replaced by Error::source, which can support downcasting
+source
+§
+fn
+provide
+<'a>(&'a self, request: &mut
+Request
+<'a>)
+🔬
+This is a nightly-only experimental API. (
+error_generic_member_access
+#99301
+)
+Provides type-based access to context intended for error reports.
+Read more
+1.15.0
+·
+source
+§
+impl !
+Send
+for
+LexError
+1.15.0
+·
+source
+§
+impl !
+Sync
+for
+LexError
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+LexError
+§
+impl
+RefUnwindSafe
+for
+LexError
+§
+impl
+Unpin
+for
+LexError
+§
+impl
+UnwindSafe
+for
+LexError
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToString
+for T
+where
+    T:
+Display
++ ?
+Sized
+,
+source
+§
+default fn
+to_string
+(&self) ->
+String
+Converts the given value to a
+String
+.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/struct.ExpandError.html
+
+ExpandError in proc_macro - Rust
+proc_macro
+1.82.0-dev
+ExpandError
+Trait Implementations
+!Send
+!Sync
+Debug
+Display
+Error
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+From<T>
+Into<U>
+ToString
+TryFrom<U>
+TryInto<U>
+In crate proc_macro
+Struct
+proc_macro
+::
+ExpandError
+Copy item path
+source
+·
+[
+−
+]
+#[non_exhaustive]
+pub struct ExpandError;
+🔬
+This is a nightly-only experimental API. (
+proc_macro_expand
+#90765
+)
+Expand description
+Error returned from
+TokenStream::expand_expr
+.
+Trait Implementations
+§
+source
+§
+impl
+Debug
+for
+ExpandError
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Display
+for
+ExpandError
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Error
+for
+ExpandError
+1.30.0
+·
+source
+§
+fn
+source
+(&self) ->
+Option
+<&(dyn
+Error
++ 'static)>
+Returns the lower-level source of this error, if any.
+Read more
+1.0.0
+·
+source
+§
+fn
+description
+(&self) -> &
+str
+👎
+Deprecated since 1.42.0: use the Display impl or to_string()
+Read more
+1.0.0
+·
+source
+§
+fn
+cause
+(&self) ->
+Option
+<&dyn
+Error
+>
+👎
+Deprecated since 1.33.0: replaced by Error::source, which can support downcasting
+source
+§
+fn
+provide
+<'a>(&'a self, request: &mut
+Request
+<'a>)
+🔬
+This is a nightly-only experimental API. (
+error_generic_member_access
+#99301
+)
+Provides type-based access to context intended for error reports.
+Read more
+source
+§
+impl !
+Send
+for
+ExpandError
+source
+§
+impl !
+Sync
+for
+ExpandError
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+ExpandError
+§
+impl
+RefUnwindSafe
+for
+ExpandError
+§
+impl
+Unpin
+for
+ExpandError
+§
+impl
+UnwindSafe
+for
+ExpandError
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToString
+for T
+where
+    T:
+Display
++ ?
+Sized
+,
+source
+§
+default fn
+to_string
+(&self) ->
+String
+Converts the given value to a
+String
+.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/struct.Punct.html
+
+Punct in proc_macro - Rust
+proc_macro
+1.82.0-dev
+Punct
+Methods
+as_char
+new
+set_span
+spacing
+span
+Trait Implementations
+!Send
+!Sync
+Clone
+Debug
+Display
+From<Punct>
+PartialEq<Punct>
+PartialEq<char>
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+ToString
+TryFrom<U>
+TryInto<U>
+In crate proc_macro
+Struct
+proc_macro
+::
+Punct
+Copy item path
+1.29.0
+·
+source
+·
+[
+−
+]
+pub struct Punct(
+/* private fields */
+);
+Expand description
+A
+Punct
+is a single punctuation character such as
++
+,
+-
+or
+#
+.
+Multi-character operators like
++=
+are represented as two instances of
+Punct
+with different
+forms of
+Spacing
+returned.
+Implementations
+§
+source
+§
+impl
+Punct
+1.29.0
+·
+source
+pub fn
+new
+(ch:
+char
+, spacing:
+Spacing
+) ->
+Punct
+Creates a new
+Punct
+from the given character and spacing.
+The
+ch
+argument must be a valid punctuation character permitted by the language,
+otherwise the function will panic.
+The returned
+Punct
+will have the default span of
+Span::call_site()
+which can be further configured with the
+set_span
+method below.
+1.29.0
+·
+source
+pub fn
+as_char
+(&self) ->
+char
+Returns the value of this punctuation character as
+char
+.
+1.29.0
+·
+source
+pub fn
+spacing
+(&self) ->
+Spacing
+Returns the spacing of this punctuation character, indicating whether it can be potentially
+combined into a multi-character operator with the following token (
+Joint
+), or whether the
+operator has definitely ended (
+Alone
+).
+1.29.0
+·
+source
+pub fn
+span
+(&self) ->
+Span
+Returns the span for this punctuation character.
+1.29.0
+·
+source
+pub fn
+set_span
+(&mut self, span:
+Span
+)
+Configure the span for this punctuation character.
+Trait Implementations
+§
+1.29.0
+·
+source
+§
+impl
+Clone
+for
+Punct
+source
+§
+fn
+clone
+(&self) ->
+Punct
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+1.29.0
+·
+source
+§
+impl
+Debug
+for
+Punct
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+1.29.0
+·
+source
+§
+impl
+Display
+for
+Punct
+Prints the punctuation character as a string that should be losslessly convertible
+back into the same character.
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+1.29.0
+·
+source
+§
+impl
+From
+<
+Punct
+> for
+TokenTree
+source
+§
+fn
+from
+(g:
+Punct
+) ->
+TokenTree
+Converts to this type from the input type.
+1.52.0
+·
+source
+§
+impl
+PartialEq
+<
+Punct
+> for
+char
+source
+§
+fn
+eq
+(&self, rhs: &
+Punct
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+1.50.0
+·
+source
+§
+impl
+PartialEq
+<
+char
+> for
+Punct
+source
+§
+fn
+eq
+(&self, rhs: &
+char
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+1.29.0
+·
+source
+§
+impl !
+Send
+for
+Punct
+1.29.0
+·
+source
+§
+impl !
+Sync
+for
+Punct
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+Punct
+§
+impl
+RefUnwindSafe
+for
+Punct
+§
+impl
+Unpin
+for
+Punct
+§
+impl
+UnwindSafe
+for
+Punct
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T>
+ToString
+for T
+where
+    T:
+Display
++ ?
+Sized
+,
+source
+§
+default fn
+to_string
+(&self) ->
+String
+Converts the given value to a
+String
+.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/quote/fn.quote.html
+
+Redirection
+Redirecting to
+../../proc_macro/fn.quote.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/quote/fn.quote_span.html
+
+Redirection
+Redirecting to
+../../proc_macro/fn.quote_span.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/diagnostic/trait.MultiSpan.html
+
+Redirection
+Redirecting to
+../../proc_macro/trait.MultiSpan.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/diagnostic/enum.Level.html
+
+Redirection
+Redirecting to
+../../proc_macro/enum.Level.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/diagnostic/struct.Diagnostic.html
+
+Redirection
+Redirecting to
+../../proc_macro/struct.Diagnostic.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/tracked_path/index.html
+
+proc_macro::tracked_path - Rust
+proc_macro
+1.82.0-dev
+Module tracked_path
+Functions
+In crate proc_macro
+Module
+proc_macro
+::
+tracked_path
+Copy item path
+source
+·
+[
+−
+]
+🔬
+This is a nightly-only experimental API. (
+track_path
+#99515
+)
+Expand description
+Tracked access to additional files.
+Functions
+§
+path
+Experimental
+Track a file explicitly.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/tracked_path/fn.path.html
+
+path in proc_macro::tracked_path - Rust
+proc_macro
+1.82.0-dev
+In proc_macro::tracked_path
+Function
+proc_macro
+::
+tracked_path
+::
+path
+Copy item path
+source
+·
+[
+−
+]
+pub fn path<P:
+AsRef
+<
+str
+>>(path: P)
+🔬
+This is a nightly-only experimental API. (
+track_path
+#99515
+)
+Expand description
+Track a file explicitly.
+Commonly used for tracking asset preprocessing.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/token_stream/index.html
+
+proc_macro::token_stream - Rust
+proc_macro
+1.82.0-dev
+Module token_stream
+Structs
+In crate proc_macro
+Module
+proc_macro
+::
+token_stream
+Copy item path
+1.29.0
+·
+source
+·
+[
+−
+]
+Expand description
+Public implementation details for the
+TokenStream
+type, such as iterators.
+Structs
+§
+IntoIter
+An iterator over
+TokenStream
+’s
+TokenTree
+s.
+The iteration is “shallow”, e.g., the iterator doesn’t recurse into delimited groups,
+and returns whole groups as token trees.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/token_stream/struct.IntoIter.html
+
+IntoIter in proc_macro::token_stream - Rust
+proc_macro
+1.82.0-dev
+IntoIter
+Trait Implementations
+Clone
+Iterator
+Auto Trait Implementations
+!Send
+!Sync
+Freeze
+RefUnwindSafe
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+IntoIterator
+ToOwned
+TryFrom<U>
+TryInto<U>
+In proc_macro::token_stream
+Struct
+proc_macro
+::
+token_stream
+::
+IntoIter
+Copy item path
+1.29.0
+·
+source
+·
+[
+−
+]
+pub struct IntoIter(
+/* private fields */
+);
+Expand description
+An iterator over
+TokenStream
+’s
+TokenTree
+s.
+The iteration is “shallow”, e.g., the iterator doesn’t recurse into delimited groups,
+and returns whole groups as token trees.
+Trait Implementations
+§
+1.29.0
+·
+source
+§
+impl
+Clone
+for
+IntoIter
+source
+§
+fn
+clone
+(&self) ->
+IntoIter
+ⓘ
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+1.29.0
+·
+source
+§
+impl
+Iterator
+for
+IntoIter
+§
+type
+Item
+=
+TokenTree
+The type of the elements being iterated over.
+source
+§
+fn
+next
+(&mut self) ->
+Option
+<
+TokenTree
+>
+Advances the iterator and returns the next value.
+Read more
+source
+§
+fn
+size_hint
+(&self) -> (
+usize
+,
+Option
+<
+usize
+>)
+Returns the bounds on the remaining length of the iterator.
+Read more
+source
+§
+fn
+count
+(self) ->
+usize
+Consumes the iterator, counting the number of iterations and returning it.
+Read more
+source
+§
+fn
+next_chunk
+<const N:
+usize
+>(
+    &mut self,
+) ->
+Result
+<[Self::
+Item
+;
+N
+],
+IntoIter
+<Self::
+Item
+, N>>
+where
+    Self:
+Sized
+,
+🔬
+This is a nightly-only experimental API. (
+iter_next_chunk
+#98326
+)
+Advances the iterator and returns an array containing the next
+N
+values.
+Read more
+1.0.0
+·
+source
+§
+fn
+last
+(self) ->
+Option
+<Self::
+Item
+>
+where
+    Self:
+Sized
+,
+Consumes the iterator, returning the last element.
+Read more
+source
+§
+fn
+advance_by
+(&mut self, n:
+usize
+) ->
+Result
+<
+()
+,
+NonZero
+<
+usize
+>>
+🔬
+This is a nightly-only experimental API. (
+iter_advance_by
+#77404
+)
+Advances the iterator by
+n
+elements.
+Read more
+1.0.0
+·
+source
+§
+fn
+nth
+(&mut self, n:
+usize
+) ->
+Option
+<Self::
+Item
+>
+Returns the
+n
+th element of the iterator.
+Read more
+1.28.0
+·
+source
+§
+fn
+step_by
+(self, step:
+usize
+) ->
+StepBy
+<Self>
+where
+    Self:
+Sized
+,
+Creates an iterator starting at the same point, but stepping by
+the given amount at each iteration.
+Read more
+1.0.0
+·
+source
+§
+fn
+chain
+<U>(self, other: U) ->
+Chain
+<Self, <U as
+IntoIterator
+>::
+IntoIter
+>
+where
+    Self:
+Sized
+,
+    U:
+IntoIterator
+<Item = Self::
+Item
+>,
+Takes two iterators and creates a new iterator over both in sequence.
+Read more
+1.0.0
+·
+source
+§
+fn
+zip
+<U>(self, other: U) ->
+Zip
+<Self, <U as
+IntoIterator
+>::
+IntoIter
+>
+where
+    Self:
+Sized
+,
+    U:
+IntoIterator
+,
+‘Zips up’ two iterators into a single iterator of pairs.
+Read more
+source
+§
+fn
+intersperse
+(self, separator: Self::
+Item
+) ->
+Intersperse
+<Self>
+where
+    Self:
+Sized
+,
+    Self::
+Item
+:
+Clone
+,
+🔬
+This is a nightly-only experimental API. (
+iter_intersperse
+#79524
+)
+Creates a new iterator which places a copy of
+separator
+between adjacent
+items of the original iterator.
+Read more
+source
+§
+fn
+intersperse_with
+<G>(self, separator: G) ->
+IntersperseWith
+<Self, G>
+where
+    Self:
+Sized
+,
+    G:
+FnMut
+() -> Self::
+Item
+,
+🔬
+This is a nightly-only experimental API. (
+iter_intersperse
+#79524
+)
+Creates a new iterator which places an item generated by
+separator
+between adjacent items of the original iterator.
+Read more
+1.0.0
+·
+source
+§
+fn
+map
+<B, F>(self, f: F) ->
+Map
+<Self, F>
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(Self::
+Item
+) -> B,
+Takes a closure and creates an iterator which calls that closure on each
+element.
+Read more
+1.21.0
+·
+source
+§
+fn
+for_each
+<F>(self, f: F)
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(Self::
+Item
+),
+Calls a closure on each element of an iterator.
+Read more
+1.0.0
+·
+source
+§
+fn
+filter
+<P>(self, predicate: P) ->
+Filter
+<Self, P>
+where
+    Self:
+Sized
+,
+    P:
+FnMut
+(&Self::
+Item
+) ->
+bool
+,
+Creates an iterator which uses a closure to determine if an element
+should be yielded.
+Read more
+1.0.0
+·
+source
+§
+fn
+filter_map
+<B, F>(self, f: F) ->
+FilterMap
+<Self, F>
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(Self::
+Item
+) ->
+Option
+<B>,
+Creates an iterator that both filters and maps.
+Read more
+1.0.0
+·
+source
+§
+fn
+enumerate
+(self) ->
+Enumerate
+<Self>
+where
+    Self:
+Sized
+,
+Creates an iterator which gives the current iteration count as well as
+the next value.
+Read more
+1.0.0
+·
+source
+§
+fn
+peekable
+(self) ->
+Peekable
+<Self>
+where
+    Self:
+Sized
+,
+Creates an iterator which can use the
+peek
+and
+peek_mut
+methods
+to look at the next element of the iterator without consuming it. See
+their documentation for more information.
+Read more
+1.0.0
+·
+source
+§
+fn
+skip_while
+<P>(self, predicate: P) ->
+SkipWhile
+<Self, P>
+where
+    Self:
+Sized
+,
+    P:
+FnMut
+(&Self::
+Item
+) ->
+bool
+,
+Creates an iterator that
+skip
+s elements based on a predicate.
+Read more
+1.0.0
+·
+source
+§
+fn
+take_while
+<P>(self, predicate: P) ->
+TakeWhile
+<Self, P>
+where
+    Self:
+Sized
+,
+    P:
+FnMut
+(&Self::
+Item
+) ->
+bool
+,
+Creates an iterator that yields elements based on a predicate.
+Read more
+1.57.0
+·
+source
+§
+fn
+map_while
+<B, P>(self, predicate: P) ->
+MapWhile
+<Self, P>
+where
+    Self:
+Sized
+,
+    P:
+FnMut
+(Self::
+Item
+) ->
+Option
+<B>,
+Creates an iterator that both yields elements based on a predicate and maps.
+Read more
+1.0.0
+·
+source
+§
+fn
+skip
+(self, n:
+usize
+) ->
+Skip
+<Self>
+where
+    Self:
+Sized
+,
+Creates an iterator that skips the first
+n
+elements.
+Read more
+1.0.0
+·
+source
+§
+fn
+take
+(self, n:
+usize
+) ->
+Take
+<Self>
+where
+    Self:
+Sized
+,
+Creates an iterator that yields the first
+n
+elements, or fewer
+if the underlying iterator ends sooner.
+Read more
+1.0.0
+·
+source
+§
+fn
+scan
+<St, B, F>(self, initial_state: St, f: F) ->
+Scan
+<Self, St, F>
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(
+&mut St
+, Self::
+Item
+) ->
+Option
+<B>,
+An iterator adapter which, like
+fold
+, holds internal state, but
+unlike
+fold
+, produces a new iterator.
+Read more
+1.0.0
+·
+source
+§
+fn
+flat_map
+<U, F>(self, f: F) ->
+FlatMap
+<Self, U, F>
+where
+    Self:
+Sized
+,
+    U:
+IntoIterator
+,
+    F:
+FnMut
+(Self::
+Item
+) -> U,
+Creates an iterator that works like map, but flattens nested structure.
+Read more
+source
+§
+fn
+map_windows
+<F, R, const N:
+usize
+>(self, f: F) ->
+MapWindows
+<Self, F, N>
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(&[Self::
+Item
+;
+N
+]) -> R,
+🔬
+This is a nightly-only experimental API. (
+iter_map_windows
+#87155
+)
+Calls the given function
+f
+for each contiguous window of size
+N
+over
+self
+and returns an iterator over the outputs of
+f
+. Like
+slice::windows()
+,
+the windows during mapping overlap as well.
+Read more
+1.0.0
+·
+source
+§
+fn
+fuse
+(self) ->
+Fuse
+<Self>
+where
+    Self:
+Sized
+,
+Creates an iterator which ends after the first
+None
+.
+Read more
+1.0.0
+·
+source
+§
+fn
+inspect
+<F>(self, f: F) ->
+Inspect
+<Self, F>
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(&Self::
+Item
+),
+Does something with each element of an iterator, passing the value on.
+Read more
+1.0.0
+·
+source
+§
+fn
+by_ref
+(&mut self) ->
+&mut Self
+where
+    Self:
+Sized
+,
+Borrows an iterator, rather than consuming it.
+Read more
+1.0.0
+·
+source
+§
+fn
+collect
+<B>(self) -> B
+where
+    B:
+FromIterator
+<Self::
+Item
+>,
+    Self:
+Sized
+,
+Transforms an iterator into a collection.
+Read more
+source
+§
+fn
+collect_into
+<E>(self, collection:
+&mut E
+) ->
+&mut E
+where
+    E:
+Extend
+<Self::
+Item
+>,
+    Self:
+Sized
+,
+🔬
+This is a nightly-only experimental API. (
+iter_collect_into
+#94780
+)
+Collects all the items from an iterator into a collection.
+Read more
+1.0.0
+·
+source
+§
+fn
+partition
+<B, F>(self, f: F) ->
+(B, B)
+where
+    Self:
+Sized
+,
+    B:
+Default
++
+Extend
+<Self::
+Item
+>,
+    F:
+FnMut
+(&Self::
+Item
+) ->
+bool
+,
+Consumes an iterator, creating two collections from it.
+Read more
+source
+§
+fn
+is_partitioned
+<P>(self, predicate: P) ->
+bool
+where
+    Self:
+Sized
+,
+    P:
+FnMut
+(Self::
+Item
+) ->
+bool
+,
+🔬
+This is a nightly-only experimental API. (
+iter_is_partitioned
+#62544
+)
+Checks if the elements of this iterator are partitioned according to the given predicate,
+such that all those that return
+true
+precede all those that return
+false
+.
+Read more
+1.27.0
+·
+source
+§
+fn
+try_fold
+<B, F, R>(&mut self, init: B, f: F) -> R
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(B, Self::
+Item
+) -> R,
+    R:
+Try
+<Output = B>,
+An iterator method that applies a function as long as it returns
+successfully, producing a single, final value.
+Read more
+1.27.0
+·
+source
+§
+fn
+try_for_each
+<F, R>(&mut self, f: F) -> R
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(Self::
+Item
+) -> R,
+    R:
+Try
+<Output =
+()
+>,
+An iterator method that applies a fallible function to each item in the
+iterator, stopping at the first error and returning that error.
+Read more
+1.0.0
+·
+source
+§
+fn
+fold
+<B, F>(self, init: B, f: F) -> B
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(B, Self::
+Item
+) -> B,
+Folds every element into an accumulator by applying an operation,
+returning the final result.
+Read more
+1.51.0
+·
+source
+§
+fn
+reduce
+<F>(self, f: F) ->
+Option
+<Self::
+Item
+>
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(Self::
+Item
+, Self::
+Item
+) -> Self::
+Item
+,
+Reduces the elements to a single one, by repeatedly applying a reducing
+operation.
+Read more
+source
+§
+fn
+try_reduce
+<R>(
+    &mut self,
+    f: impl
+FnMut
+(Self::
+Item
+, Self::
+Item
+) -> R,
+) -> <<R as
+Try
+>::
+Residual
+as
+Residual
+<
+Option
+<<R as
+Try
+>::
+Output
+>>>::
+TryType
+where
+    Self:
+Sized
+,
+    R:
+Try
+<Output = Self::
+Item
+>,
+    <R as
+Try
+>::
+Residual
+:
+Residual
+<
+Option
+<Self::
+Item
+>>,
+🔬
+This is a nightly-only experimental API. (
+iterator_try_reduce
+#87053
+)
+Reduces the elements to a single one by repeatedly applying a reducing operation. If the
+closure returns a failure, the failure is propagated back to the caller immediately.
+Read more
+1.0.0
+·
+source
+§
+fn
+all
+<F>(&mut self, f: F) ->
+bool
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(Self::
+Item
+) ->
+bool
+,
+Tests if every element of the iterator matches a predicate.
+Read more
+1.0.0
+·
+source
+§
+fn
+any
+<F>(&mut self, f: F) ->
+bool
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(Self::
+Item
+) ->
+bool
+,
+Tests if any element of the iterator matches a predicate.
+Read more
+1.0.0
+·
+source
+§
+fn
+find
+<P>(&mut self, predicate: P) ->
+Option
+<Self::
+Item
+>
+where
+    Self:
+Sized
+,
+    P:
+FnMut
+(&Self::
+Item
+) ->
+bool
+,
+Searches for an element of an iterator that satisfies a predicate.
+Read more
+1.30.0
+·
+source
+§
+fn
+find_map
+<B, F>(&mut self, f: F) ->
+Option
+<B>
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(Self::
+Item
+) ->
+Option
+<B>,
+Applies function to the elements of iterator and returns
+the first non-none result.
+Read more
+source
+§
+fn
+try_find
+<R>(
+    &mut self,
+    f: impl
+FnMut
+(&Self::
+Item
+) -> R,
+) -> <<R as
+Try
+>::
+Residual
+as
+Residual
+<
+Option
+<Self::
+Item
+>>>::
+TryType
+where
+    Self:
+Sized
+,
+    R:
+Try
+<Output =
+bool
+>,
+    <R as
+Try
+>::
+Residual
+:
+Residual
+<
+Option
+<Self::
+Item
+>>,
+🔬
+This is a nightly-only experimental API. (
+try_find
+#63178
+)
+Applies function to the elements of iterator and returns
+the first true result or the first error.
+Read more
+1.0.0
+·
+source
+§
+fn
+position
+<P>(&mut self, predicate: P) ->
+Option
+<
+usize
+>
+where
+    Self:
+Sized
+,
+    P:
+FnMut
+(Self::
+Item
+) ->
+bool
+,
+Searches for an element in an iterator, returning its index.
+Read more
+1.6.0
+·
+source
+§
+fn
+max_by_key
+<B, F>(self, f: F) ->
+Option
+<Self::
+Item
+>
+where
+    B:
+Ord
+,
+    Self:
+Sized
+,
+    F:
+FnMut
+(&Self::
+Item
+) -> B,
+Returns the element that gives the maximum value from the
+specified function.
+Read more
+1.15.0
+·
+source
+§
+fn
+max_by
+<F>(self, compare: F) ->
+Option
+<Self::
+Item
+>
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(&Self::
+Item
+, &Self::
+Item
+) ->
+Ordering
+,
+Returns the element that gives the maximum value with respect to the
+specified comparison function.
+Read more
+1.6.0
+·
+source
+§
+fn
+min_by_key
+<B, F>(self, f: F) ->
+Option
+<Self::
+Item
+>
+where
+    B:
+Ord
+,
+    Self:
+Sized
+,
+    F:
+FnMut
+(&Self::
+Item
+) -> B,
+Returns the element that gives the minimum value from the
+specified function.
+Read more
+1.15.0
+·
+source
+§
+fn
+min_by
+<F>(self, compare: F) ->
+Option
+<Self::
+Item
+>
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(&Self::
+Item
+, &Self::
+Item
+) ->
+Ordering
+,
+Returns the element that gives the minimum value with respect to the
+specified comparison function.
+Read more
+1.0.0
+·
+source
+§
+fn
+unzip
+<A, B, FromA, FromB>(self) ->
+(FromA, FromB)
+where
+    FromA:
+Default
++
+Extend
+<A>,
+    FromB:
+Default
++
+Extend
+<B>,
+    Self:
+Sized
++
+Iterator
+<Item =
+(A, B)
+>,
+Converts an iterator of pairs into a pair of containers.
+Read more
+1.36.0
+·
+source
+§
+fn
+copied
+<'a, T>(self) ->
+Copied
+<Self>
+where
+    T: 'a +
+Copy
+,
+    Self:
+Sized
++
+Iterator
+<Item =
+&'a T
+>,
+Creates an iterator which copies all of its elements.
+Read more
+1.0.0
+·
+source
+§
+fn
+cloned
+<'a, T>(self) ->
+Cloned
+<Self>
+where
+    T: 'a +
+Clone
+,
+    Self:
+Sized
++
+Iterator
+<Item =
+&'a T
+>,
+Creates an iterator which
+clone
+s all of its elements.
+Read more
+1.0.0
+·
+source
+§
+fn
+cycle
+(self) ->
+Cycle
+<Self>
+where
+    Self:
+Sized
++
+Clone
+,
+Repeats an iterator endlessly.
+Read more
+source
+§
+fn
+array_chunks
+<const N:
+usize
+>(self) ->
+ArrayChunks
+<Self, N>
+where
+    Self:
+Sized
+,
+🔬
+This is a nightly-only experimental API. (
+iter_array_chunks
+#100450
+)
+Returns an iterator over
+N
+elements of the iterator at a time.
+Read more
+1.11.0
+·
+source
+§
+fn
+sum
+<S>(self) -> S
+where
+    Self:
+Sized
+,
+    S:
+Sum
+<Self::
+Item
+>,
+Sums the elements of an iterator.
+Read more
+1.11.0
+·
+source
+§
+fn
+product
+<P>(self) -> P
+where
+    Self:
+Sized
+,
+    P:
+Product
+<Self::
+Item
+>,
+Iterates over the entire iterator, multiplying all the elements
+Read more
+source
+§
+fn
+cmp_by
+<I, F>(self, other: I, cmp: F) ->
+Ordering
+where
+    Self:
+Sized
+,
+    I:
+IntoIterator
+,
+    F:
+FnMut
+(Self::
+Item
+, <I as
+IntoIterator
+>::
+Item
+) ->
+Ordering
+,
+🔬
+This is a nightly-only experimental API. (
+iter_order_by
+#64295
+)
+Lexicographically
+compares the elements of this
+Iterator
+with those
+of another with respect to the specified comparison function.
+Read more
+1.5.0
+·
+source
+§
+fn
+partial_cmp
+<I>(self, other: I) ->
+Option
+<
+Ordering
+>
+where
+    I:
+IntoIterator
+,
+    Self::
+Item
+:
+PartialOrd
+<<I as
+IntoIterator
+>::
+Item
+>,
+    Self:
+Sized
+,
+Lexicographically
+compares the
+PartialOrd
+elements of
+this
+Iterator
+with those of another. The comparison works like short-circuit
+evaluation, returning a result without comparing the remaining elements.
+As soon as an order can be determined, the evaluation stops and a result is returned.
+Read more
+source
+§
+fn
+partial_cmp_by
+<I, F>(self, other: I, partial_cmp: F) ->
+Option
+<
+Ordering
+>
+where
+    Self:
+Sized
+,
+    I:
+IntoIterator
+,
+    F:
+FnMut
+(Self::
+Item
+, <I as
+IntoIterator
+>::
+Item
+) ->
+Option
+<
+Ordering
+>,
+🔬
+This is a nightly-only experimental API. (
+iter_order_by
+#64295
+)
+Lexicographically
+compares the elements of this
+Iterator
+with those
+of another with respect to the specified comparison function.
+Read more
+1.5.0
+·
+source
+§
+fn
+eq
+<I>(self, other: I) ->
+bool
+where
+    I:
+IntoIterator
+,
+    Self::
+Item
+:
+PartialEq
+<<I as
+IntoIterator
+>::
+Item
+>,
+    Self:
+Sized
+,
+Determines if the elements of this
+Iterator
+are equal to those of
+another.
+Read more
+source
+§
+fn
+eq_by
+<I, F>(self, other: I, eq: F) ->
+bool
+where
+    Self:
+Sized
+,
+    I:
+IntoIterator
+,
+    F:
+FnMut
+(Self::
+Item
+, <I as
+IntoIterator
+>::
+Item
+) ->
+bool
+,
+🔬
+This is a nightly-only experimental API. (
+iter_order_by
+#64295
+)
+Determines if the elements of this
+Iterator
+are equal to those of
+another with respect to the specified equality function.
+Read more
+1.5.0
+·
+source
+§
+fn
+ne
+<I>(self, other: I) ->
+bool
+where
+    I:
+IntoIterator
+,
+    Self::
+Item
+:
+PartialEq
+<<I as
+IntoIterator
+>::
+Item
+>,
+    Self:
+Sized
+,
+Determines if the elements of this
+Iterator
+are not equal to those of
+another.
+Read more
+1.5.0
+·
+source
+§
+fn
+lt
+<I>(self, other: I) ->
+bool
+where
+    I:
+IntoIterator
+,
+    Self::
+Item
+:
+PartialOrd
+<<I as
+IntoIterator
+>::
+Item
+>,
+    Self:
+Sized
+,
+Determines if the elements of this
+Iterator
+are
+lexicographically
+less than those of another.
+Read more
+1.5.0
+·
+source
+§
+fn
+le
+<I>(self, other: I) ->
+bool
+where
+    I:
+IntoIterator
+,
+    Self::
+Item
+:
+PartialOrd
+<<I as
+IntoIterator
+>::
+Item
+>,
+    Self:
+Sized
+,
+Determines if the elements of this
+Iterator
+are
+lexicographically
+less or equal to those of another.
+Read more
+1.5.0
+·
+source
+§
+fn
+gt
+<I>(self, other: I) ->
+bool
+where
+    I:
+IntoIterator
+,
+    Self::
+Item
+:
+PartialOrd
+<<I as
+IntoIterator
+>::
+Item
+>,
+    Self:
+Sized
+,
+Determines if the elements of this
+Iterator
+are
+lexicographically
+greater than those of another.
+Read more
+1.5.0
+·
+source
+§
+fn
+ge
+<I>(self, other: I) ->
+bool
+where
+    I:
+IntoIterator
+,
+    Self::
+Item
+:
+PartialOrd
+<<I as
+IntoIterator
+>::
+Item
+>,
+    Self:
+Sized
+,
+Determines if the elements of this
+Iterator
+are
+lexicographically
+greater than or equal to those of another.
+Read more
+1.81.0
+·
+source
+§
+fn
+is_sorted_by
+<F>(self, compare: F) ->
+bool
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(&Self::
+Item
+, &Self::
+Item
+) ->
+bool
+,
+Checks if the elements of this iterator are sorted using the given comparator function.
+Read more
+1.81.0
+·
+source
+§
+fn
+is_sorted_by_key
+<F, K>(self, f: F) ->
+bool
+where
+    Self:
+Sized
+,
+    F:
+FnMut
+(Self::
+Item
+) -> K,
+    K:
+PartialOrd
+,
+Checks if the elements of this iterator are sorted using the given key extraction
+function.
+Read more
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+IntoIter
+§
+impl
+RefUnwindSafe
+for
+IntoIter
+§
+impl !
+Send
+for
+IntoIter
+§
+impl !
+Sync
+for
+IntoIter
+§
+impl
+Unpin
+for
+IntoIter
+§
+impl
+UnwindSafe
+for
+IntoIter
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+#126799
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<I>
+IntoIterator
+for I
+where
+    I:
+Iterator
+,
+§
+type
+Item
+= <I as
+Iterator
+>::
+Item
+The type of the elements being iterated over.
+§
+type
+IntoIter
+= I
+Which kind of iterator are we turning this into?
+source
+§
+fn
+into_iter
+(self) -> I
+Creates an iterator from a value.
+Read more
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/tracked_env/fn.var.html
+
+var in proc_macro::tracked_env - Rust
+proc_macro
+1.82.0-dev
+In proc_macro::tracked_env
+Function
+proc_macro
+::
+tracked_env
+::
+var
+Copy item path
+source
+·
+[
+−
+]
+pub fn var<K:
+AsRef
+<
+OsStr
+> +
+AsRef
+<
+str
+>>(key: K) ->
+Result
+<
+String
+,
+VarError
+>
+🔬
+This is a nightly-only experimental API. (
+proc_macro_tracked_env
+#99515
+)
+Expand description
+Retrieve an environment variable and add it to build dependency info.
+The build system executing the compiler will know that the variable was accessed during
+compilation, and will be able to rerun the build when the value of that variable changes.
+Besides the dependency tracking this function should be equivalent to
+env::var
+from the
+standard library, except that the argument must be UTF-8.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/proc_macro/tracked_env/index.html
+
+proc_macro::tracked_env - Rust
+proc_macro
+1.82.0-dev
+Module tracked_env
+Functions
+In crate proc_macro
+Module
+proc_macro
+::
+tracked_env
+Copy item path
+source
+·
+[
+−
+]
+🔬
+This is a nightly-only experimental API. (
+proc_macro_tracked_env
+#99515
+)
+Expand description
+Tracked access to environment variables.
+Functions
+§
+var
+Experimental
+Retrieve an environment variable and add it to build dependency info.
+The build system executing the compiler will know that the variable was accessed during
+compilation, and will be able to rerun the build when the value of that variable changes.
+Besides the dependency tracking this function should be equivalent to
+env::var
+from the
+standard library, except that the argument must be UTF-8.
+
+================================================================================
+
