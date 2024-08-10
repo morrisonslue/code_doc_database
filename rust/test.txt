@@ -1,0 +1,15876 @@
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/all.html
+
+List of all items in this crate
+test
+1.82.0-dev
+Structs
+Enums
+Traits
+Functions
+List of all items
+Structs
+Options
+TestDesc
+TestDescAndFn
+TestId
+TestOpts
+bench::BenchSamples
+bench::Bencher
+stats::Summary
+test::Metric
+test::MetricMap
+test::Options
+test::TestDesc
+test::TestDescAndFn
+test::TestExecTime
+test::TestId
+test::TestOpts
+test::TestTimeOptions
+Enums
+ColorConfig
+NamePadding
+OutputFormat
+RunIgnored
+ShouldPanic
+TestFn
+TestName
+TestType
+test::RunIgnored
+test::RunStrategy
+test::ShouldPanic
+test::TestName
+test::TestResult
+test::TestType
+Traits
+stats::Stats
+Functions
+assert_test_result
+bench::benchmark
+bench::black_box
+bench::fmt_bench_samples
+bench::iter
+bench::run_once
+convert_benchmarks_to_tests
+filter_tests
+run_test
+run_tests
+run_tests_console
+stats::winsorize
+test::parse_opts
+test_main
+test_main_static
+test_main_static_abort
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/enum.TestName.html
+
+TestName in test - Rust
+test
+1.82.0-dev
+TestName
+Variants
+AlignedTestName
+DynTestName
+StaticTestName
+Methods
+as_slice
+padding
+with_padding
+Trait Implementations
+Clone
+Debug
+Display
+Eq
+Hash
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+ToString
+TryFrom<U>
+TryInto<U>
+In crate test
+Enum
+test
+::
+TestName
+Copy item path
+source
+·
+[
+−
+]
+pub enum TestName {
+    StaticTestName(&'static
+str
+),
+    DynTestName(
+String
+),
+    AlignedTestName(
+Cow
+<'static,
+str
+>,
+NamePadding
+),
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Variants
+§
+§
+StaticTestName(&'static
+str
+)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+DynTestName(
+String
+)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+AlignedTestName(
+Cow
+<'static,
+str
+>,
+NamePadding
+)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Implementations
+§
+source
+§
+impl
+TestName
+source
+pub fn
+as_slice
+(&self) -> &
+str
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+pub fn
+padding
+(&self) ->
+NamePadding
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+pub fn
+with_padding
+(&self, padding:
+NamePadding
+) ->
+TestName
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+TestName
+source
+§
+fn
+clone
+(&self) ->
+TestName
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+TestName
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Display
+for
+TestName
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Hash
+for
+TestName
+source
+§
+fn
+hash
+<__H:
+Hasher
+>(&self, state:
+&mut __H
+)
+Feeds this value into the given
+Hasher
+.
+Read more
+1.3.0
+·
+source
+§
+fn
+hash_slice
+<H>(data: &
+[Self]
+, state:
+&mut H
+)
+where
+    H:
+Hasher
+,
+    Self:
+Sized
+,
+Feeds a slice of this type into the given
+Hasher
+.
+Read more
+source
+§
+impl
+PartialEq
+for
+TestName
+source
+§
+fn
+eq
+(&self, other: &
+TestName
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+Eq
+for
+TestName
+source
+§
+impl
+StructuralPartialEq
+for
+TestName
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TestName
+§
+impl
+RefUnwindSafe
+for
+TestName
+§
+impl
+Send
+for
+TestName
+§
+impl
+Sync
+for
+TestName
+§
+impl
+Unpin
+for
+TestName
+§
+impl
+UnwindSafe
+for
+TestName
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T>
+ToString
+for T
+where
+    T:
+Display
++ ?
+Sized
+,
+source
+§
+default fn
+to_string
+(&self) ->
+String
+Converts the given value to a
+String
+.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/fn.filter_tests.html
+
+filter_tests in test - Rust
+test
+1.82.0-dev
+Function
+test
+::
+filter_tests
+Copy item path
+source
+·
+[
+−
+]
+pub fn filter_tests(
+    opts: &
+TestOpts
+,
+    tests:
+Vec
+<
+TestDescAndFn
+>,
+) ->
+Vec
+<
+TestDescAndFn
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/fn.run_tests.html
+
+run_tests in test - Rust
+test
+1.82.0-dev
+Function
+test
+::
+run_tests
+Copy item path
+source
+·
+[
+−
+]
+pub fn run_tests<F>(
+    opts: &
+TestOpts
+,
+    tests:
+Vec
+<
+TestDescAndFn
+>,
+    notify_about_test_event: F,
+) ->
+Result
+<
+()
+>
+where
+    F:
+FnMut
+(TestEvent) ->
+Result
+<
+()
+>,
+🔬
+This is a nightly-only experimental API. (
+test
+)
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/index.html
+
+test - Rust
+test
+1.82.0-dev
+All Items
+Re-exports
+Modules
+Structs
+Enums
+Functions
+Crate
+test
+Copy item path
+source
+·
+[
+−
+]
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Support code for rustc’s built in unit-test and micro-benchmarking
+framework.
+Almost all user code will only be interested in
+Bencher
+and
+black_box
+. All other interactions (such as writing tests and
+benchmarks themselves) should be done via the
+#[test]
+and
+#[bench]
+attributes.
+See the
+Testing Chapter
+of the book for more
+details.
+Re-exports
+§
+pub use self::bench::
+black_box
+;
+Experimental
+pub use self::bench::
+Bencher
+;
+Experimental
+pub use self::types::
+TestName
+::*;
+Experimental
+pub use
+NamePadding
+::*;
+Experimental
+pub use
+TestFn
+::*;
+Experimental
+pub use
+TestName
+::*;
+Experimental
+pub use self::
+ColorConfig
+::*;
+Experimental
+Modules
+§
+bench
+Experimental
+Benchmarking module.
+stats
+Experimental
+test
+Experimental
+Structs
+§
+Options
+Experimental
+Options for the test run defined by the caller (instead of CLI arguments).
+In case we want to add other options as well, just add them in this struct.
+TestDesc
+Experimental
+TestDescAndFn
+Experimental
+TestId
+Experimental
+TestOpts
+Experimental
+Enums
+§
+ColorConfig
+Experimental
+Whether should console output be colored or not
+NamePadding
+Experimental
+OutputFormat
+Experimental
+Format of the test results output
+RunIgnored
+Experimental
+Whether ignored test should be run or not
+ShouldPanic
+Experimental
+Whether test is expected to panic or not
+TestFn
+Experimental
+TestName
+Experimental
+TestType
+Experimental
+Type of the test according to the
+Rust book
+conventions.
+Functions
+§
+assert_test_result
+Experimental
+Invoked when unit tests terminate. Returns
+Result::Err
+if the test is
+considered a failure. By default, invokes
+report()
+and checks for a
+0
+result.
+convert_benchmarks_to_tests
+Experimental
+filter_tests
+Experimental
+run_test
+Experimental
+run_tests
+Experimental
+run_tests_console
+Experimental
+A simple console test runner.
+Runs provided tests reporting process and results to the stdout.
+test_main
+Experimental
+test_main_static
+Experimental
+A variant optimized for invocation with a static test vector.
+This will panic (intentionally) when fed any dynamic tests.
+test_main_static_abort
+Experimental
+A variant optimized for invocation with a static test vector.
+This will panic (intentionally) when fed any dynamic tests.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/struct.Options.html
+
+Options in test - Rust
+test
+1.82.0-dev
+Options
+Fields
+display_output
+panic_abort
+Methods
+display_output
+new
+panic_abort
+Trait Implementations
+Clone
+Copy
+Debug
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In crate test
+Struct
+test
+::
+Options
+Copy item path
+source
+·
+[
+−
+]
+pub struct Options {
+    pub display_output:
+bool
+,
+    pub panic_abort:
+bool
+,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Options for the test run defined by the caller (instead of CLI arguments).
+In case we want to add other options as well, just add them in this struct.
+Fields
+§
+§
+display_output:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+panic_abort:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Implementations
+§
+source
+§
+impl
+Options
+source
+pub fn
+new
+() ->
+Options
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+pub fn
+display_output
+(self, display_output:
+bool
+) ->
+Options
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+pub fn
+panic_abort
+(self, panic_abort:
+bool
+) ->
+Options
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+Options
+source
+§
+fn
+clone
+(&self) ->
+Options
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+Options
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Copy
+for
+Options
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+Options
+§
+impl
+RefUnwindSafe
+for
+Options
+§
+impl
+Send
+for
+Options
+§
+impl
+Sync
+for
+Options
+§
+impl
+Unpin
+for
+Options
+§
+impl
+UnwindSafe
+for
+Options
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/enum.OutputFormat.html
+
+OutputFormat in test - Rust
+test
+1.82.0-dev
+OutputFormat
+Variants
+Json
+Junit
+Pretty
+Terse
+Trait Implementations
+Clone
+Copy
+Debug
+Default
+Eq
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In crate test
+Enum
+test
+::
+OutputFormat
+Copy item path
+source
+·
+[
+−
+]
+pub enum OutputFormat {
+    Pretty,
+    Terse,
+    Json,
+    Junit,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Format of the test results output
+Variants
+§
+§
+Pretty
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Verbose output
+§
+Terse
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Quiet output
+§
+Json
+🔬
+This is a nightly-only experimental API. (
+test
+)
+JSON output
+§
+Junit
+🔬
+This is a nightly-only experimental API. (
+test
+)
+JUnit output
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+OutputFormat
+source
+§
+fn
+clone
+(&self) ->
+OutputFormat
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+OutputFormat
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Default
+for
+OutputFormat
+source
+§
+fn
+default
+() ->
+OutputFormat
+Returns the “default value” for a type.
+Read more
+source
+§
+impl
+PartialEq
+for
+OutputFormat
+source
+§
+fn
+eq
+(&self, other: &
+OutputFormat
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+Copy
+for
+OutputFormat
+source
+§
+impl
+Eq
+for
+OutputFormat
+source
+§
+impl
+StructuralPartialEq
+for
+OutputFormat
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+OutputFormat
+§
+impl
+RefUnwindSafe
+for
+OutputFormat
+§
+impl
+Send
+for
+OutputFormat
+§
+impl
+Sync
+for
+OutputFormat
+§
+impl
+Unpin
+for
+OutputFormat
+§
+impl
+UnwindSafe
+for
+OutputFormat
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/fn.test_main_static_abort.html
+
+test_main_static_abort in test - Rust
+test
+1.82.0-dev
+Function
+test
+::
+test_main_static_abort
+Copy item path
+source
+·
+[
+−
+]
+pub fn test_main_static_abort(tests: &[&
+TestDescAndFn
+])
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+A variant optimized for invocation with a static test vector.
+This will panic (intentionally) when fed any dynamic tests.
+Runs tests in panic=abort mode, which involves spawning subprocesses for
+tests.
+This is the entry point for the main function generated by
+rustc --test
+when panic=abort.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/struct.TestDescAndFn.html
+
+TestDescAndFn in test - Rust
+test
+1.82.0-dev
+TestDescAndFn
+Fields
+desc
+testfn
+Trait Implementations
+Debug
+Auto Trait Implementations
+!RefUnwindSafe
+!Sync
+!UnwindSafe
+Freeze
+Send
+Unpin
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+From<T>
+Into<U>
+TryFrom<U>
+TryInto<U>
+In crate test
+Struct
+test
+::
+TestDescAndFn
+Copy item path
+source
+·
+[
+−
+]
+pub struct TestDescAndFn {
+    pub desc:
+TestDesc
+,
+    pub testfn:
+TestFn
+,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Fields
+§
+§
+desc:
+TestDesc
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+testfn:
+TestFn
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Debug
+for
+TestDescAndFn
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TestDescAndFn
+§
+impl !
+RefUnwindSafe
+for
+TestDescAndFn
+§
+impl
+Send
+for
+TestDescAndFn
+§
+impl !
+Sync
+for
+TestDescAndFn
+§
+impl
+Unpin
+for
+TestDescAndFn
+§
+impl !
+UnwindSafe
+for
+TestDescAndFn
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/enum.TestFn.html
+
+TestFn in test - Rust
+test
+1.82.0-dev
+TestFn
+Variants
+DynBenchAsTestFn
+DynBenchFn
+DynTestFn
+StaticBenchAsTestFn
+StaticBenchFn
+StaticTestFn
+Methods
+padding
+Trait Implementations
+Debug
+Auto Trait Implementations
+!RefUnwindSafe
+!Sync
+!UnwindSafe
+Freeze
+Send
+Unpin
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+From<T>
+Into<U>
+TryFrom<U>
+TryInto<U>
+In crate test
+Enum
+test
+::
+TestFn
+Copy item path
+source
+·
+[
+−
+]
+pub enum TestFn {
+    StaticTestFn(
+fn
+() ->
+Result
+<
+()
+,
+String
+>),
+    StaticBenchFn(
+fn
+(_: &mut
+Bencher
+) ->
+Result
+<
+()
+,
+String
+>),
+    StaticBenchAsTestFn(
+fn
+(_: &mut
+Bencher
+) ->
+Result
+<
+()
+,
+String
+>),
+    DynTestFn(
+Box
+<dyn
+FnOnce
+() ->
+Result
+<
+()
+,
+String
+> +
+Send
+>),
+    DynBenchFn(
+Box
+<dyn
+Fn
+(&mut
+Bencher
+) ->
+Result
+<
+()
+,
+String
+> +
+Send
+>),
+    DynBenchAsTestFn(
+Box
+<dyn
+Fn
+(&mut
+Bencher
+) ->
+Result
+<
+()
+,
+String
+> +
+Send
+>),
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Variants
+§
+§
+StaticTestFn(
+fn
+() ->
+Result
+<
+()
+,
+String
+>)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+StaticBenchFn(
+fn
+(_: &mut
+Bencher
+) ->
+Result
+<
+()
+,
+String
+>)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+StaticBenchAsTestFn(
+fn
+(_: &mut
+Bencher
+) ->
+Result
+<
+()
+,
+String
+>)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+DynTestFn(
+Box
+<dyn
+FnOnce
+() ->
+Result
+<
+()
+,
+String
+> +
+Send
+>)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+DynBenchFn(
+Box
+<dyn
+Fn
+(&mut
+Bencher
+) ->
+Result
+<
+()
+,
+String
+> +
+Send
+>)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+DynBenchAsTestFn(
+Box
+<dyn
+Fn
+(&mut
+Bencher
+) ->
+Result
+<
+()
+,
+String
+> +
+Send
+>)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Implementations
+§
+source
+§
+impl
+TestFn
+source
+pub fn
+padding
+(&self) ->
+NamePadding
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Debug
+for
+TestFn
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TestFn
+§
+impl !
+RefUnwindSafe
+for
+TestFn
+§
+impl
+Send
+for
+TestFn
+§
+impl !
+Sync
+for
+TestFn
+§
+impl
+Unpin
+for
+TestFn
+§
+impl !
+UnwindSafe
+for
+TestFn
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/fn.run_test.html
+
+run_test in test - Rust
+test
+1.82.0-dev
+Function
+test
+::
+run_test
+Copy item path
+source
+·
+[
+−
+]
+pub fn run_test(
+    opts: &
+TestOpts
+,
+    force_ignore:
+bool
+,
+    id:
+TestId
+,
+    test:
+TestDescAndFn
+,
+    strategy:
+RunStrategy
+,
+    monitor_ch:
+Sender
+<CompletedTest>,
+) ->
+Option
+<
+JoinHandle
+<
+()
+>>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/fn.test_main_static.html
+
+test_main_static in test - Rust
+test
+1.82.0-dev
+Function
+test
+::
+test_main_static
+Copy item path
+source
+·
+[
+−
+]
+pub fn test_main_static(tests: &[&
+TestDescAndFn
+])
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+A variant optimized for invocation with a static test vector.
+This will panic (intentionally) when fed any dynamic tests.
+This is the entry point for the main function generated by
+rustc --test
+when panic=unwind.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/fn.convert_benchmarks_to_tests.html
+
+convert_benchmarks_to_tests in test - Rust
+test
+1.82.0-dev
+Function
+test
+::
+convert_benchmarks_to_tests
+Copy item path
+source
+·
+[
+−
+]
+pub fn convert_benchmarks_to_tests(
+    tests:
+Vec
+<
+TestDescAndFn
+>,
+) ->
+Vec
+<
+TestDescAndFn
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/enum.TestType.html
+
+TestType in test - Rust
+test
+1.82.0-dev
+TestType
+Variants
+DocTest
+IntegrationTest
+UnitTest
+Unknown
+Trait Implementations
+Clone
+Copy
+Debug
+Eq
+Hash
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In crate test
+Enum
+test
+::
+TestType
+Copy item path
+source
+·
+[
+−
+]
+pub enum TestType {
+    UnitTest,
+    IntegrationTest,
+    DocTest,
+    Unknown,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Type of the test according to the
+Rust book
+conventions.
+Variants
+§
+§
+UnitTest
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Unit-tests are expected to be in the
+src
+folder of the crate.
+§
+IntegrationTest
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Integration-style tests are expected to be in the
+tests
+folder of the crate.
+§
+DocTest
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Doctests are created by the
+librustdoc
+manually, so it’s a different type of test.
+§
+Unknown
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Tests for the sources that don’t follow the project layout convention
+(e.g. tests in raw
+main.rs
+compiled by calling
+rustc --test
+directly).
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+TestType
+source
+§
+fn
+clone
+(&self) ->
+TestType
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+TestType
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Hash
+for
+TestType
+source
+§
+fn
+hash
+<__H:
+Hasher
+>(&self, state:
+&mut __H
+)
+Feeds this value into the given
+Hasher
+.
+Read more
+1.3.0
+·
+source
+§
+fn
+hash_slice
+<H>(data: &
+[Self]
+, state:
+&mut H
+)
+where
+    H:
+Hasher
+,
+    Self:
+Sized
+,
+Feeds a slice of this type into the given
+Hasher
+.
+Read more
+source
+§
+impl
+PartialEq
+for
+TestType
+source
+§
+fn
+eq
+(&self, other: &
+TestType
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+Copy
+for
+TestType
+source
+§
+impl
+Eq
+for
+TestType
+source
+§
+impl
+StructuralPartialEq
+for
+TestType
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TestType
+§
+impl
+RefUnwindSafe
+for
+TestType
+§
+impl
+Send
+for
+TestType
+§
+impl
+Sync
+for
+TestType
+§
+impl
+Unpin
+for
+TestType
+§
+impl
+UnwindSafe
+for
+TestType
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/enum.ColorConfig.html
+
+ColorConfig in test - Rust
+test
+1.82.0-dev
+ColorConfig
+Variants
+AlwaysColor
+AutoColor
+NeverColor
+Trait Implementations
+Clone
+Copy
+Debug
+Default
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In crate test
+Enum
+test
+::
+ColorConfig
+Copy item path
+source
+·
+[
+−
+]
+pub enum ColorConfig {
+    AutoColor,
+    AlwaysColor,
+    NeverColor,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Whether should console output be colored or not
+Variants
+§
+§
+AutoColor
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+AlwaysColor
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+NeverColor
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+ColorConfig
+source
+§
+fn
+clone
+(&self) ->
+ColorConfig
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+ColorConfig
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Default
+for
+ColorConfig
+source
+§
+fn
+default
+() ->
+ColorConfig
+Returns the “default value” for a type.
+Read more
+source
+§
+impl
+Copy
+for
+ColorConfig
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+ColorConfig
+§
+impl
+RefUnwindSafe
+for
+ColorConfig
+§
+impl
+Send
+for
+ColorConfig
+§
+impl
+Sync
+for
+ColorConfig
+§
+impl
+Unpin
+for
+ColorConfig
+§
+impl
+UnwindSafe
+for
+ColorConfig
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/enum.NamePadding.html
+
+NamePadding in test - Rust
+test
+1.82.0-dev
+NamePadding
+Variants
+PadNone
+PadOnRight
+Trait Implementations
+Clone
+Copy
+Debug
+Eq
+Hash
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In crate test
+Enum
+test
+::
+NamePadding
+Copy item path
+source
+·
+[
+−
+]
+pub enum NamePadding {
+    PadNone,
+    PadOnRight,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Variants
+§
+§
+PadNone
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+PadOnRight
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+NamePadding
+source
+§
+fn
+clone
+(&self) ->
+NamePadding
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+NamePadding
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Hash
+for
+NamePadding
+source
+§
+fn
+hash
+<__H:
+Hasher
+>(&self, state:
+&mut __H
+)
+Feeds this value into the given
+Hasher
+.
+Read more
+1.3.0
+·
+source
+§
+fn
+hash_slice
+<H>(data: &
+[Self]
+, state:
+&mut H
+)
+where
+    H:
+Hasher
+,
+    Self:
+Sized
+,
+Feeds a slice of this type into the given
+Hasher
+.
+Read more
+source
+§
+impl
+PartialEq
+for
+NamePadding
+source
+§
+fn
+eq
+(&self, other: &
+NamePadding
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+Copy
+for
+NamePadding
+source
+§
+impl
+Eq
+for
+NamePadding
+source
+§
+impl
+StructuralPartialEq
+for
+NamePadding
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+NamePadding
+§
+impl
+RefUnwindSafe
+for
+NamePadding
+§
+impl
+Send
+for
+NamePadding
+§
+impl
+Sync
+for
+NamePadding
+§
+impl
+Unpin
+for
+NamePadding
+§
+impl
+UnwindSafe
+for
+NamePadding
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/enum.RunIgnored.html
+
+RunIgnored in test - Rust
+test
+1.82.0-dev
+RunIgnored
+Variants
+No
+Only
+Yes
+Trait Implementations
+Clone
+Copy
+Debug
+Eq
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In crate test
+Enum
+test
+::
+RunIgnored
+Copy item path
+source
+·
+[
+−
+]
+pub enum RunIgnored {
+    Yes,
+    No,
+    Only,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Whether ignored test should be run or not
+Variants
+§
+§
+Yes
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+No
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+Only
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Run only ignored tests
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+RunIgnored
+source
+§
+fn
+clone
+(&self) ->
+RunIgnored
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+RunIgnored
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+PartialEq
+for
+RunIgnored
+source
+§
+fn
+eq
+(&self, other: &
+RunIgnored
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+Copy
+for
+RunIgnored
+source
+§
+impl
+Eq
+for
+RunIgnored
+source
+§
+impl
+StructuralPartialEq
+for
+RunIgnored
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+RunIgnored
+§
+impl
+RefUnwindSafe
+for
+RunIgnored
+§
+impl
+Send
+for
+RunIgnored
+§
+impl
+Sync
+for
+RunIgnored
+§
+impl
+Unpin
+for
+RunIgnored
+§
+impl
+UnwindSafe
+for
+RunIgnored
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/fn.assert_test_result.html
+
+assert_test_result in test - Rust
+test
+1.82.0-dev
+Function
+test
+::
+assert_test_result
+Copy item path
+source
+·
+[
+−
+]
+pub fn assert_test_result<T:
+Termination
+>(result: T) ->
+Result
+<
+()
+,
+String
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Invoked when unit tests terminate. Returns
+Result::Err
+if the test is
+considered a failure. By default, invokes
+report()
+and checks for a
+0
+result.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/struct.TestId.html
+
+TestId in test - Rust
+test
+1.82.0-dev
+TestId
+Tuple Fields
+0
+Trait Implementations
+Clone
+Copy
+Debug
+Eq
+Hash
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In crate test
+Struct
+test
+::
+TestId
+Copy item path
+source
+·
+[
+−
+]
+pub struct TestId(pub
+usize
+);
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Tuple Fields
+§
+§
+0:
+usize
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+TestId
+source
+§
+fn
+clone
+(&self) ->
+TestId
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+TestId
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Hash
+for
+TestId
+source
+§
+fn
+hash
+<__H:
+Hasher
+>(&self, state:
+&mut __H
+)
+Feeds this value into the given
+Hasher
+.
+Read more
+1.3.0
+·
+source
+§
+fn
+hash_slice
+<H>(data: &
+[Self]
+, state:
+&mut H
+)
+where
+    H:
+Hasher
+,
+    Self:
+Sized
+,
+Feeds a slice of this type into the given
+Hasher
+.
+Read more
+source
+§
+impl
+PartialEq
+for
+TestId
+source
+§
+fn
+eq
+(&self, other: &
+TestId
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+Copy
+for
+TestId
+source
+§
+impl
+Eq
+for
+TestId
+source
+§
+impl
+StructuralPartialEq
+for
+TestId
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TestId
+§
+impl
+RefUnwindSafe
+for
+TestId
+§
+impl
+Send
+for
+TestId
+§
+impl
+Sync
+for
+TestId
+§
+impl
+Unpin
+for
+TestId
+§
+impl
+UnwindSafe
+for
+TestId
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/fn.run_tests_console.html
+
+run_tests_console in test - Rust
+test
+1.82.0-dev
+Function
+test
+::
+run_tests_console
+Copy item path
+source
+·
+[
+−
+]
+pub fn run_tests_console(
+    opts: &
+TestOpts
+,
+    tests:
+Vec
+<
+TestDescAndFn
+>,
+) ->
+Result
+<
+bool
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+A simple console test runner.
+Runs provided tests reporting process and results to the stdout.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/fn.test_main.html
+
+test_main in test - Rust
+test
+1.82.0-dev
+Function
+test
+::
+test_main
+Copy item path
+source
+·
+[
+−
+]
+pub fn test_main(
+    args: &[
+String
+],
+    tests:
+Vec
+<
+TestDescAndFn
+>,
+    options:
+Option
+<
+Options
+>,
+)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/struct.TestOpts.html
+
+TestOpts in test - Rust
+test
+1.82.0-dev
+TestOpts
+Fields
+bench_benchmarks
+color
+exclude_should_panic
+fail_fast
+filter_exact
+filters
+force_run_in_process
+format
+list
+logfile
+nocapture
+options
+run_ignored
+run_tests
+shuffle
+shuffle_seed
+skip
+test_threads
+time_options
+Methods
+use_color
+Trait Implementations
+Debug
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+From<T>
+Into<U>
+TryFrom<U>
+TryInto<U>
+In crate test
+Struct
+test
+::
+TestOpts
+Copy item path
+source
+·
+[
+−
+]
+pub struct TestOpts {
+Show 19 fields
+pub list:
+bool
+,
+    pub filters:
+Vec
+<
+String
+>,
+    pub filter_exact:
+bool
+,
+    pub force_run_in_process:
+bool
+,
+    pub exclude_should_panic:
+bool
+,
+    pub run_ignored:
+RunIgnored
+,
+    pub run_tests:
+bool
+,
+    pub bench_benchmarks:
+bool
+,
+    pub logfile:
+Option
+<
+PathBuf
+>,
+    pub nocapture:
+bool
+,
+    pub color:
+ColorConfig
+,
+    pub format:
+OutputFormat
+,
+    pub shuffle:
+bool
+,
+    pub shuffle_seed:
+Option
+<
+u64
+>,
+    pub test_threads:
+Option
+<
+usize
+>,
+    pub skip:
+Vec
+<
+String
+>,
+    pub time_options:
+Option
+<
+TestTimeOptions
+>,
+    pub fail_fast:
+bool
+,
+    pub options:
+Options
+,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Fields
+§
+§
+list:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+filters:
+Vec
+<
+String
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+filter_exact:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+force_run_in_process:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+exclude_should_panic:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+run_ignored:
+RunIgnored
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+run_tests:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+bench_benchmarks:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+logfile:
+Option
+<
+PathBuf
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+nocapture:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+color:
+ColorConfig
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+format:
+OutputFormat
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+shuffle:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+shuffle_seed:
+Option
+<
+u64
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+test_threads:
+Option
+<
+usize
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+skip:
+Vec
+<
+String
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+time_options:
+Option
+<
+TestTimeOptions
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+fail_fast:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Stop at first failing test.
+May run a few more tests due to threading, but will
+abort as soon as possible.
+§
+options:
+Options
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Implementations
+§
+source
+§
+impl
+TestOpts
+source
+pub fn
+use_color
+(&self) ->
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Debug
+for
+TestOpts
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TestOpts
+§
+impl
+RefUnwindSafe
+for
+TestOpts
+§
+impl
+Send
+for
+TestOpts
+§
+impl
+Sync
+for
+TestOpts
+§
+impl
+Unpin
+for
+TestOpts
+§
+impl
+UnwindSafe
+for
+TestOpts
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/struct.TestDesc.html
+
+TestDesc in test - Rust
+test
+1.82.0-dev
+TestDesc
+Fields
+compile_fail
+end_col
+end_line
+ignore
+ignore_message
+name
+no_run
+should_panic
+source_file
+start_col
+start_line
+test_type
+Methods
+padded_name
+test_mode
+Trait Implementations
+Clone
+Debug
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In crate test
+Struct
+test
+::
+TestDesc
+Copy item path
+source
+·
+[
+−
+]
+pub struct TestDesc {
+    pub name:
+TestName
+,
+    pub ignore:
+bool
+,
+    pub ignore_message:
+Option
+<&'static
+str
+>,
+    pub source_file: &'static
+str
+,
+    pub start_line:
+usize
+,
+    pub start_col:
+usize
+,
+    pub end_line:
+usize
+,
+    pub end_col:
+usize
+,
+    pub should_panic:
+ShouldPanic
+,
+    pub compile_fail:
+bool
+,
+    pub no_run:
+bool
+,
+    pub test_type:
+TestType
+,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Fields
+§
+§
+name:
+TestName
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+ignore:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+ignore_message:
+Option
+<&'static
+str
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+source_file: &'static
+str
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+start_line:
+usize
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+start_col:
+usize
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+end_line:
+usize
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+end_col:
+usize
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+should_panic:
+ShouldPanic
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+compile_fail:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+no_run:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+test_type:
+TestType
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Implementations
+§
+source
+§
+impl
+TestDesc
+source
+pub fn
+padded_name
+(&self, column_count:
+usize
+, align:
+NamePadding
+) ->
+String
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+pub fn
+test_mode
+(&self) ->
+Option
+<&'static
+str
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Returns None for ignored test or tests that are just run, otherwise returns a description of the type of test.
+Descriptions include “should panic”, “compile fail” and “compile”.
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+TestDesc
+source
+§
+fn
+clone
+(&self) ->
+TestDesc
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+TestDesc
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TestDesc
+§
+impl
+RefUnwindSafe
+for
+TestDesc
+§
+impl
+Send
+for
+TestDesc
+§
+impl
+Sync
+for
+TestDesc
+§
+impl
+Unpin
+for
+TestDesc
+§
+impl
+UnwindSafe
+for
+TestDesc
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/enum.ShouldPanic.html
+
+ShouldPanic in test - Rust
+test
+1.82.0-dev
+ShouldPanic
+Variants
+No
+Yes
+YesWithMessage
+Trait Implementations
+Clone
+Copy
+Debug
+Eq
+Hash
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In crate test
+Enum
+test
+::
+ShouldPanic
+Copy item path
+source
+·
+[
+−
+]
+pub enum ShouldPanic {
+    No,
+    Yes,
+    YesWithMessage(&'static
+str
+),
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Whether test is expected to panic or not
+Variants
+§
+§
+No
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+Yes
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+YesWithMessage(&'static
+str
+)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+ShouldPanic
+source
+§
+fn
+clone
+(&self) ->
+ShouldPanic
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+ShouldPanic
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Hash
+for
+ShouldPanic
+source
+§
+fn
+hash
+<__H:
+Hasher
+>(&self, state:
+&mut __H
+)
+Feeds this value into the given
+Hasher
+.
+Read more
+1.3.0
+·
+source
+§
+fn
+hash_slice
+<H>(data: &
+[Self]
+, state:
+&mut H
+)
+where
+    H:
+Hasher
+,
+    Self:
+Sized
+,
+Feeds a slice of this type into the given
+Hasher
+.
+Read more
+source
+§
+impl
+PartialEq
+for
+ShouldPanic
+source
+§
+fn
+eq
+(&self, other: &
+ShouldPanic
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+Copy
+for
+ShouldPanic
+source
+§
+impl
+Eq
+for
+ShouldPanic
+source
+§
+impl
+StructuralPartialEq
+for
+ShouldPanic
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+ShouldPanic
+§
+impl
+RefUnwindSafe
+for
+ShouldPanic
+§
+impl
+Send
+for
+ShouldPanic
+§
+impl
+Sync
+for
+ShouldPanic
+§
+impl
+Unpin
+for
+ShouldPanic
+§
+impl
+UnwindSafe
+for
+ShouldPanic
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/options/struct.Options.html
+
+Redirection
+Redirecting to
+../../test/test/struct.Options.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/options/enum.RunStrategy.html
+
+Redirection
+Redirecting to
+../../test/test/enum.RunStrategy.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/options/enum.OutputFormat.html
+
+Redirection
+Redirecting to
+../../test/enum.OutputFormat.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/options/enum.ColorConfig.html
+
+Redirection
+Redirecting to
+../../test/enum.ColorConfig.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/options/enum.RunIgnored.html
+
+Redirection
+Redirecting to
+../../test/test/enum.RunIgnored.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/options/enum.ShouldPanic.html
+
+Redirection
+Redirecting to
+../../test/test/enum.ShouldPanic.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/bench/fn.run_once.html
+
+run_once in test::bench - Rust
+test
+1.82.0-dev
+In test::bench
+Function
+test
+::
+bench
+::
+run_once
+Copy item path
+source
+·
+[
+−
+]
+pub fn run_once<F>(f: F) ->
+Result
+<
+()
+,
+String
+>
+where
+    F:
+FnMut
+(&mut
+Bencher
+) ->
+Result
+<
+()
+,
+String
+>,
+🔬
+This is a nightly-only experimental API. (
+test
+)
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/bench/index.html
+
+test::bench - Rust
+test
+1.82.0-dev
+Module bench
+Structs
+Functions
+In crate test
+Module
+test
+::
+bench
+Copy item path
+source
+·
+[
+−
+]
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Benchmarking module.
+Structs
+§
+BenchSamples
+Experimental
+Bencher
+Experimental
+Manager of the benchmarking runs.
+Functions
+§
+benchmark
+Experimental
+black_box
+Experimental
+An identity function that
+hints
+to the compiler to be maximally pessimistic about what
+black_box
+could do.
+fmt_bench_samples
+Experimental
+iter
+Experimental
+run_once
+Experimental
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/bench/fn.black_box.html
+
+black_box in test::bench - Rust
+test
+1.82.0-dev
+In test::bench
+Function
+test
+::
+bench
+::
+black_box
+Copy item path
+source
+·
+[
+−
+]
+pub fn black_box<T>(dummy: T) -> T
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+An identity function that
+hints
+to the compiler to be maximally pessimistic about what
+black_box
+could do.
+See
+std::hint::black_box
+for details.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/bench/fn.benchmark.html
+
+benchmark in test::bench - Rust
+test
+1.82.0-dev
+In test::bench
+Function
+test
+::
+bench
+::
+benchmark
+Copy item path
+source
+·
+[
+−
+]
+pub fn benchmark<F>(
+    id:
+TestId
+,
+    desc:
+TestDesc
+,
+    monitor_ch:
+Sender
+<CompletedTest>,
+    nocapture:
+bool
+,
+    f: F,
+)
+where
+    F:
+FnMut
+(&mut
+Bencher
+) ->
+Result
+<
+()
+,
+String
+>,
+🔬
+This is a nightly-only experimental API. (
+test
+)
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/bench/struct.BenchSamples.html
+
+BenchSamples in test::bench - Rust
+test
+1.82.0-dev
+BenchSamples
+Fields
+mb_s
+ns_iter_summ
+Trait Implementations
+Clone
+Debug
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In test::bench
+Struct
+test
+::
+bench
+::
+BenchSamples
+Copy item path
+source
+·
+[
+−
+]
+pub struct BenchSamples {
+    pub ns_iter_summ:
+Summary
+,
+    pub mb_s:
+usize
+,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Fields
+§
+§
+ns_iter_summ:
+Summary
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+mb_s:
+usize
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+BenchSamples
+source
+§
+fn
+clone
+(&self) ->
+BenchSamples
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+BenchSamples
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+PartialEq
+for
+BenchSamples
+source
+§
+fn
+eq
+(&self, other: &
+BenchSamples
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+StructuralPartialEq
+for
+BenchSamples
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+BenchSamples
+§
+impl
+RefUnwindSafe
+for
+BenchSamples
+§
+impl
+Send
+for
+BenchSamples
+§
+impl
+Sync
+for
+BenchSamples
+§
+impl
+Unpin
+for
+BenchSamples
+§
+impl
+UnwindSafe
+for
+BenchSamples
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/bench/fn.iter.html
+
+iter in test::bench - Rust
+test
+1.82.0-dev
+In test::bench
+Function
+test
+::
+bench
+::
+iter
+Copy item path
+source
+·
+[
+−
+]
+pub fn iter<T, F>(inner:
+&mut F
+) ->
+Summary
+where
+    F:
+FnMut
+() -> T,
+🔬
+This is a nightly-only experimental API. (
+test
+)
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/bench/fn.fmt_bench_samples.html
+
+fmt_bench_samples in test::bench - Rust
+test
+1.82.0-dev
+In test::bench
+Function
+test
+::
+bench
+::
+fmt_bench_samples
+Copy item path
+source
+·
+[
+−
+]
+pub fn fmt_bench_samples(bs: &
+BenchSamples
+) ->
+String
+🔬
+This is a nightly-only experimental API. (
+test
+)
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/bench/struct.Bencher.html
+
+Bencher in test::bench - Rust
+test
+1.82.0-dev
+Bencher
+Fields
+bytes
+Methods
+bench
+iter
+Trait Implementations
+Clone
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In test::bench
+Struct
+test
+::
+bench
+::
+Bencher
+Copy item path
+source
+·
+[
+−
+]
+pub struct Bencher {
+    pub bytes:
+u64
+,
+/* private fields */
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Manager of the benchmarking runs.
+This is fed into functions marked with
+#[bench]
+to allow for
+set-up & tear-down before running a piece of code repeatedly via a
+call to
+iter
+.
+Fields
+§
+§
+bytes:
+u64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Implementations
+§
+source
+§
+impl
+Bencher
+source
+pub fn
+iter
+<T, F>(&mut self, inner: F)
+where
+    F:
+FnMut
+() -> T,
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Callback for benchmark functions to run in their body.
+source
+pub fn
+bench
+<F>(&mut self, f: F) ->
+Result
+<
+Option
+<
+Summary
+>,
+String
+>
+where
+    F:
+FnMut
+(&mut
+Bencher
+) ->
+Result
+<
+()
+,
+String
+>,
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+Bencher
+source
+§
+fn
+clone
+(&self) ->
+Bencher
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+Bencher
+§
+impl
+RefUnwindSafe
+for
+Bencher
+§
+impl
+Send
+for
+Bencher
+§
+impl
+Sync
+for
+Bencher
+§
+impl
+Unpin
+for
+Bencher
+§
+impl
+UnwindSafe
+for
+Bencher
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/types/enum.TestName.html
+
+Redirection
+Redirecting to
+../../test/test/enum.TestName.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/types/struct.TestDescAndFn.html
+
+Redirection
+Redirecting to
+../../test/test/struct.TestDescAndFn.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/types/enum.TestFn.html
+
+Redirection
+Redirecting to
+../../test/enum.TestFn.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/types/enum.TestType.html
+
+Redirection
+Redirecting to
+../../test/test/enum.TestType.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/types/enum.NamePadding.html
+
+Redirection
+Redirecting to
+../../test/enum.NamePadding.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/types/struct.TestId.html
+
+Redirection
+Redirecting to
+../../test/test/struct.TestId.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/types/struct.TestDesc.html
+
+Redirection
+Redirecting to
+../../test/test/struct.TestDesc.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/struct.TestExecTime.html
+
+TestExecTime in test::test - Rust
+test
+1.82.0-dev
+TestExecTime
+Tuple Fields
+0
+Trait Implementations
+Clone
+Debug
+Display
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+ToString
+TryFrom<U>
+TryInto<U>
+In test::test
+Struct
+test
+::
+test
+::
+TestExecTime
+Copy item path
+source
+·
+[
+−
+]
+pub struct TestExecTime(pub
+Duration
+);
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+The measured execution time of a unit test.
+Tuple Fields
+§
+§
+0:
+Duration
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+TestExecTime
+source
+§
+fn
+clone
+(&self) ->
+TestExecTime
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+TestExecTime
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Display
+for
+TestExecTime
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+PartialEq
+for
+TestExecTime
+source
+§
+fn
+eq
+(&self, other: &
+TestExecTime
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+StructuralPartialEq
+for
+TestExecTime
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TestExecTime
+§
+impl
+RefUnwindSafe
+for
+TestExecTime
+§
+impl
+Send
+for
+TestExecTime
+§
+impl
+Sync
+for
+TestExecTime
+§
+impl
+Unpin
+for
+TestExecTime
+§
+impl
+UnwindSafe
+for
+TestExecTime
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T>
+ToString
+for T
+where
+    T:
+Display
++ ?
+Sized
+,
+source
+§
+default fn
+to_string
+(&self) ->
+String
+Converts the given value to a
+String
+.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/enum.TestName.html
+
+TestName in test::test - Rust
+test
+1.82.0-dev
+TestName
+Variants
+AlignedTestName
+DynTestName
+StaticTestName
+Methods
+as_slice
+padding
+with_padding
+Trait Implementations
+Clone
+Debug
+Display
+Eq
+Hash
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+ToString
+TryFrom<U>
+TryInto<U>
+In test::test
+Enum
+test
+::
+test
+::
+TestName
+Copy item path
+source
+·
+[
+−
+]
+pub enum TestName {
+    StaticTestName(&'static
+str
+),
+    DynTestName(
+String
+),
+    AlignedTestName(
+Cow
+<'static,
+str
+>,
+NamePadding
+),
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Variants
+§
+§
+StaticTestName(&'static
+str
+)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+DynTestName(
+String
+)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+AlignedTestName(
+Cow
+<'static,
+str
+>,
+NamePadding
+)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Implementations
+§
+source
+§
+impl
+TestName
+source
+pub fn
+as_slice
+(&self) -> &
+str
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+pub fn
+padding
+(&self) ->
+NamePadding
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+pub fn
+with_padding
+(&self, padding:
+NamePadding
+) ->
+TestName
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+TestName
+source
+§
+fn
+clone
+(&self) ->
+TestName
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+TestName
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Display
+for
+TestName
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Hash
+for
+TestName
+source
+§
+fn
+hash
+<__H:
+Hasher
+>(&self, state:
+&mut __H
+)
+Feeds this value into the given
+Hasher
+.
+Read more
+1.3.0
+·
+source
+§
+fn
+hash_slice
+<H>(data: &
+[Self]
+, state:
+&mut H
+)
+where
+    H:
+Hasher
+,
+    Self:
+Sized
+,
+Feeds a slice of this type into the given
+Hasher
+.
+Read more
+source
+§
+impl
+PartialEq
+for
+TestName
+source
+§
+fn
+eq
+(&self, other: &
+TestName
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+Eq
+for
+TestName
+source
+§
+impl
+StructuralPartialEq
+for
+TestName
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TestName
+§
+impl
+RefUnwindSafe
+for
+TestName
+§
+impl
+Send
+for
+TestName
+§
+impl
+Sync
+for
+TestName
+§
+impl
+Unpin
+for
+TestName
+§
+impl
+UnwindSafe
+for
+TestName
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T>
+ToString
+for T
+where
+    T:
+Display
++ ?
+Sized
+,
+source
+§
+default fn
+to_string
+(&self) ->
+String
+Converts the given value to a
+String
+.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/fn.parse_opts.html
+
+parse_opts in test::test - Rust
+test
+1.82.0-dev
+In test::test
+Function
+test
+::
+test
+::
+parse_opts
+Copy item path
+source
+·
+[
+−
+]
+pub fn parse_opts(args: &[
+String
+]) ->
+Option
+<
+Result
+<
+TestOpts
+,
+String
+>>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Parses command line arguments into test options.
+Returns
+None
+if help was requested (since we only show help message and don’t run tests),
+returns
+Some(Err(..))
+if provided arguments are incorrect,
+otherwise creates a
+TestOpts
+object and returns it.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/enum.TestResult.html
+
+TestResult in test::test - Rust
+test
+1.82.0-dev
+TestResult
+Variants
+TrBench
+TrFailed
+TrFailedMsg
+TrIgnored
+TrOk
+TrTimedFail
+Trait Implementations
+Clone
+Debug
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In test::test
+Enum
+test
+::
+test
+::
+TestResult
+Copy item path
+source
+·
+[
+−
+]
+pub enum TestResult {
+    TrOk,
+    TrFailed,
+    TrFailedMsg(
+String
+),
+    TrIgnored,
+    TrBench(
+BenchSamples
+),
+    TrTimedFail,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Variants
+§
+§
+TrOk
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+TrFailed
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+TrFailedMsg(
+String
+)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+TrIgnored
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+TrBench(
+BenchSamples
+)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+TrTimedFail
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+TestResult
+source
+§
+fn
+clone
+(&self) ->
+TestResult
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+TestResult
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+PartialEq
+for
+TestResult
+source
+§
+fn
+eq
+(&self, other: &
+TestResult
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+StructuralPartialEq
+for
+TestResult
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TestResult
+§
+impl
+RefUnwindSafe
+for
+TestResult
+§
+impl
+Send
+for
+TestResult
+§
+impl
+Sync
+for
+TestResult
+§
+impl
+Unpin
+for
+TestResult
+§
+impl
+UnwindSafe
+for
+TestResult
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/index.html
+
+test::test - Rust
+test
+1.82.0-dev
+Module test
+Re-exports
+Structs
+Enums
+Functions
+In crate test
+Module
+test
+::
+test
+Copy item path
+source
+·
+[
+−
+]
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Re-exports
+§
+pub use crate::bench::
+Bencher
+;
+Experimental
+pub use crate::test_result::
+TrFailed
+;
+Experimental
+pub use crate::test_result::
+TrFailedMsg
+;
+Experimental
+pub use crate::test_result::
+TrIgnored
+;
+Experimental
+pub use crate::test_result::
+TrOk
+;
+Experimental
+pub use crate::types::
+DynTestFn
+;
+Experimental
+pub use crate::types::
+DynTestName
+;
+Experimental
+pub use crate::types::
+StaticBenchFn
+;
+Experimental
+pub use crate::types::
+StaticTestFn
+;
+Experimental
+pub use crate::types::
+StaticTestName
+;
+Experimental
+pub use crate::
+assert_test_result
+;
+Experimental
+pub use crate::
+filter_tests
+;
+Experimental
+pub use crate::
+run_test
+;
+Experimental
+pub use crate::
+test_main
+;
+Experimental
+pub use crate::
+test_main_static
+;
+Experimental
+Structs
+§
+Metric
+Experimental
+MetricMap
+Experimental
+Options
+Experimental
+Options for the test run defined by the caller (instead of CLI arguments).
+In case we want to add other options as well, just add them in this struct.
+TestDesc
+Experimental
+TestDescAndFn
+Experimental
+TestExecTime
+Experimental
+The measured execution time of a unit test.
+TestId
+Experimental
+TestOpts
+Experimental
+TestTimeOptions
+Experimental
+Structure with parameters for calculating test execution time.
+Enums
+§
+RunIgnored
+Experimental
+Whether ignored test should be run or not
+RunStrategy
+Experimental
+ShouldPanic
+Experimental
+Whether test is expected to panic or not
+TestName
+Experimental
+TestResult
+Experimental
+TestType
+Experimental
+Type of the test according to the
+Rust book
+conventions.
+Functions
+§
+parse_opts
+Experimental
+Parses command line arguments into test options.
+Returns
+None
+if help was requested (since we only show help message and don’t run tests),
+returns
+Some(Err(..))
+if provided arguments are incorrect,
+otherwise creates a
+TestOpts
+object and returns it.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/struct.Options.html
+
+Options in test::test - Rust
+test
+1.82.0-dev
+Options
+Fields
+display_output
+panic_abort
+Methods
+display_output
+new
+panic_abort
+Trait Implementations
+Clone
+Copy
+Debug
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In test::test
+Struct
+test
+::
+test
+::
+Options
+Copy item path
+source
+·
+[
+−
+]
+pub struct Options {
+    pub display_output:
+bool
+,
+    pub panic_abort:
+bool
+,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Options for the test run defined by the caller (instead of CLI arguments).
+In case we want to add other options as well, just add them in this struct.
+Fields
+§
+§
+display_output:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+panic_abort:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Implementations
+§
+source
+§
+impl
+Options
+source
+pub fn
+new
+() ->
+Options
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+pub fn
+display_output
+(self, display_output:
+bool
+) ->
+Options
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+pub fn
+panic_abort
+(self, panic_abort:
+bool
+) ->
+Options
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+Options
+source
+§
+fn
+clone
+(&self) ->
+Options
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+Options
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Copy
+for
+Options
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+Options
+§
+impl
+RefUnwindSafe
+for
+Options
+§
+impl
+Send
+for
+Options
+§
+impl
+Sync
+for
+Options
+§
+impl
+Unpin
+for
+Options
+§
+impl
+UnwindSafe
+for
+Options
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/enum.RunStrategy.html
+
+RunStrategy in test::test - Rust
+test
+1.82.0-dev
+RunStrategy
+Variants
+InProcess
+SpawnPrimary
+Trait Implementations
+Clone
+Copy
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In test::test
+Enum
+test
+::
+test
+::
+RunStrategy
+Copy item path
+source
+·
+[
+−
+]
+pub enum RunStrategy {
+    InProcess,
+    SpawnPrimary,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Variants
+§
+§
+InProcess
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Runs the test in the current process, and sends the result back over the
+supplied channel.
+§
+SpawnPrimary
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Spawns a subprocess to run the test, and sends the result back over the
+supplied channel. Requires
+argv[0]
+to exist and point to the binary
+that’s currently running.
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+RunStrategy
+source
+§
+fn
+clone
+(&self) ->
+RunStrategy
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Copy
+for
+RunStrategy
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+RunStrategy
+§
+impl
+RefUnwindSafe
+for
+RunStrategy
+§
+impl
+Send
+for
+RunStrategy
+§
+impl
+Sync
+for
+RunStrategy
+§
+impl
+Unpin
+for
+RunStrategy
+§
+impl
+UnwindSafe
+for
+RunStrategy
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/struct.Metric.html
+
+Metric in test::test - Rust
+test
+1.82.0-dev
+Metric
+Methods
+new
+Trait Implementations
+Clone
+Copy
+Debug
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In test::test
+Struct
+test
+::
+test
+::
+Metric
+Copy item path
+source
+·
+[
+−
+]
+pub struct Metric {
+/* private fields */
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Implementations
+§
+source
+§
+impl
+Metric
+source
+pub fn
+new
+(value:
+f64
+, noise:
+f64
+) ->
+Metric
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+Metric
+source
+§
+fn
+clone
+(&self) ->
+Metric
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+Metric
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+PartialEq
+for
+Metric
+source
+§
+fn
+eq
+(&self, other: &
+Metric
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+Copy
+for
+Metric
+source
+§
+impl
+StructuralPartialEq
+for
+Metric
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+Metric
+§
+impl
+RefUnwindSafe
+for
+Metric
+§
+impl
+Send
+for
+Metric
+§
+impl
+Sync
+for
+Metric
+§
+impl
+Unpin
+for
+Metric
+§
+impl
+UnwindSafe
+for
+Metric
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/struct.TestDescAndFn.html
+
+TestDescAndFn in test::test - Rust
+test
+1.82.0-dev
+TestDescAndFn
+Fields
+desc
+testfn
+Trait Implementations
+Debug
+Auto Trait Implementations
+!RefUnwindSafe
+!Sync
+!UnwindSafe
+Freeze
+Send
+Unpin
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+From<T>
+Into<U>
+TryFrom<U>
+TryInto<U>
+In test::test
+Struct
+test
+::
+test
+::
+TestDescAndFn
+Copy item path
+source
+·
+[
+−
+]
+pub struct TestDescAndFn {
+    pub desc:
+TestDesc
+,
+    pub testfn:
+TestFn
+,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Fields
+§
+§
+desc:
+TestDesc
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+testfn:
+TestFn
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Debug
+for
+TestDescAndFn
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TestDescAndFn
+§
+impl !
+RefUnwindSafe
+for
+TestDescAndFn
+§
+impl
+Send
+for
+TestDescAndFn
+§
+impl !
+Sync
+for
+TestDescAndFn
+§
+impl
+Unpin
+for
+TestDescAndFn
+§
+impl !
+UnwindSafe
+for
+TestDescAndFn
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/enum.TestType.html
+
+TestType in test::test - Rust
+test
+1.82.0-dev
+TestType
+Variants
+DocTest
+IntegrationTest
+UnitTest
+Unknown
+Trait Implementations
+Clone
+Copy
+Debug
+Eq
+Hash
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In test::test
+Enum
+test
+::
+test
+::
+TestType
+Copy item path
+source
+·
+[
+−
+]
+pub enum TestType {
+    UnitTest,
+    IntegrationTest,
+    DocTest,
+    Unknown,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Type of the test according to the
+Rust book
+conventions.
+Variants
+§
+§
+UnitTest
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Unit-tests are expected to be in the
+src
+folder of the crate.
+§
+IntegrationTest
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Integration-style tests are expected to be in the
+tests
+folder of the crate.
+§
+DocTest
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Doctests are created by the
+librustdoc
+manually, so it’s a different type of test.
+§
+Unknown
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Tests for the sources that don’t follow the project layout convention
+(e.g. tests in raw
+main.rs
+compiled by calling
+rustc --test
+directly).
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+TestType
+source
+§
+fn
+clone
+(&self) ->
+TestType
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+TestType
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Hash
+for
+TestType
+source
+§
+fn
+hash
+<__H:
+Hasher
+>(&self, state:
+&mut __H
+)
+Feeds this value into the given
+Hasher
+.
+Read more
+1.3.0
+·
+source
+§
+fn
+hash_slice
+<H>(data: &
+[Self]
+, state:
+&mut H
+)
+where
+    H:
+Hasher
+,
+    Self:
+Sized
+,
+Feeds a slice of this type into the given
+Hasher
+.
+Read more
+source
+§
+impl
+PartialEq
+for
+TestType
+source
+§
+fn
+eq
+(&self, other: &
+TestType
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+Copy
+for
+TestType
+source
+§
+impl
+Eq
+for
+TestType
+source
+§
+impl
+StructuralPartialEq
+for
+TestType
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TestType
+§
+impl
+RefUnwindSafe
+for
+TestType
+§
+impl
+Send
+for
+TestType
+§
+impl
+Sync
+for
+TestType
+§
+impl
+Unpin
+for
+TestType
+§
+impl
+UnwindSafe
+for
+TestType
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/enum.RunIgnored.html
+
+RunIgnored in test::test - Rust
+test
+1.82.0-dev
+RunIgnored
+Variants
+No
+Only
+Yes
+Trait Implementations
+Clone
+Copy
+Debug
+Eq
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In test::test
+Enum
+test
+::
+test
+::
+RunIgnored
+Copy item path
+source
+·
+[
+−
+]
+pub enum RunIgnored {
+    Yes,
+    No,
+    Only,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Whether ignored test should be run or not
+Variants
+§
+§
+Yes
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+No
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+Only
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Run only ignored tests
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+RunIgnored
+source
+§
+fn
+clone
+(&self) ->
+RunIgnored
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+RunIgnored
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+PartialEq
+for
+RunIgnored
+source
+§
+fn
+eq
+(&self, other: &
+RunIgnored
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+Copy
+for
+RunIgnored
+source
+§
+impl
+Eq
+for
+RunIgnored
+source
+§
+impl
+StructuralPartialEq
+for
+RunIgnored
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+RunIgnored
+§
+impl
+RefUnwindSafe
+for
+RunIgnored
+§
+impl
+Send
+for
+RunIgnored
+§
+impl
+Sync
+for
+RunIgnored
+§
+impl
+Unpin
+for
+RunIgnored
+§
+impl
+UnwindSafe
+for
+RunIgnored
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/struct.MetricMap.html
+
+MetricMap in test::test - Rust
+test
+1.82.0-dev
+MetricMap
+Methods
+fmt_metrics
+insert_metric
+new
+Trait Implementations
+Clone
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In test::test
+Struct
+test
+::
+test
+::
+MetricMap
+Copy item path
+source
+·
+[
+−
+]
+pub struct MetricMap(
+/* private fields */
+);
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Implementations
+§
+source
+§
+impl
+MetricMap
+source
+pub fn
+new
+() ->
+MetricMap
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+pub fn
+insert_metric
+(&mut self, name: &
+str
+, value:
+f64
+, noise:
+f64
+)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Insert a named
+value
+(+/-
+noise
+) metric into the map. The value
+must be non-negative. The
+noise
+indicates the uncertainty of the
+metric, which doubles as the “noise range” of acceptable
+pairwise-regressions on this named value, when comparing from one
+metric to the next using
+compare_to_old
+.
+If
+noise
+is positive, then it means this metric is of a value
+you want to see grow smaller, so a change larger than
+noise
+in the
+positive direction represents a regression.
+If
+noise
+is negative, then it means this metric is of a value
+you want to see grow larger, so a change larger than
+noise
+in the
+negative direction represents a regression.
+source
+pub fn
+fmt_metrics
+(&self) ->
+String
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+MetricMap
+source
+§
+fn
+clone
+(&self) ->
+MetricMap
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+PartialEq
+for
+MetricMap
+source
+§
+fn
+eq
+(&self, other: &
+MetricMap
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+StructuralPartialEq
+for
+MetricMap
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+MetricMap
+§
+impl
+RefUnwindSafe
+for
+MetricMap
+§
+impl
+Send
+for
+MetricMap
+§
+impl
+Sync
+for
+MetricMap
+§
+impl
+Unpin
+for
+MetricMap
+§
+impl
+UnwindSafe
+for
+MetricMap
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/struct.TestTimeOptions.html
+
+TestTimeOptions in test::test - Rust
+test
+1.82.0-dev
+TestTimeOptions
+Fields
+doctest_threshold
+error_on_excess
+integration_threshold
+unit_threshold
+Methods
+is_critical
+is_warn
+new_from_env
+Trait Implementations
+Clone
+Copy
+Debug
+Default
+Eq
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In test::test
+Struct
+test
+::
+test
+::
+TestTimeOptions
+Copy item path
+source
+·
+[
+−
+]
+pub struct TestTimeOptions {
+    pub error_on_excess:
+bool
+,
+    pub unit_threshold: TimeThreshold,
+    pub integration_threshold: TimeThreshold,
+    pub doctest_threshold: TimeThreshold,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Structure with parameters for calculating test execution time.
+Fields
+§
+§
+error_on_excess:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Denotes if the test critical execution time limit excess should be considered
+a test failure.
+§
+unit_threshold: TimeThreshold
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+integration_threshold: TimeThreshold
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+doctest_threshold: TimeThreshold
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Implementations
+§
+source
+§
+impl
+TestTimeOptions
+source
+pub fn
+new_from_env
+(error_on_excess:
+bool
+) -> Self
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+pub fn
+is_warn
+(&self, test: &
+TestDesc
+, exec_time: &
+TestExecTime
+) ->
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+pub fn
+is_critical
+(&self, test: &
+TestDesc
+, exec_time: &
+TestExecTime
+) ->
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+TestTimeOptions
+source
+§
+fn
+clone
+(&self) ->
+TestTimeOptions
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+TestTimeOptions
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Default
+for
+TestTimeOptions
+source
+§
+fn
+default
+() ->
+TestTimeOptions
+Returns the “default value” for a type.
+Read more
+source
+§
+impl
+PartialEq
+for
+TestTimeOptions
+source
+§
+fn
+eq
+(&self, other: &
+TestTimeOptions
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+Copy
+for
+TestTimeOptions
+source
+§
+impl
+Eq
+for
+TestTimeOptions
+source
+§
+impl
+StructuralPartialEq
+for
+TestTimeOptions
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TestTimeOptions
+§
+impl
+RefUnwindSafe
+for
+TestTimeOptions
+§
+impl
+Send
+for
+TestTimeOptions
+§
+impl
+Sync
+for
+TestTimeOptions
+§
+impl
+Unpin
+for
+TestTimeOptions
+§
+impl
+UnwindSafe
+for
+TestTimeOptions
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/struct.TestId.html
+
+TestId in test::test - Rust
+test
+1.82.0-dev
+TestId
+Tuple Fields
+0
+Trait Implementations
+Clone
+Copy
+Debug
+Eq
+Hash
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In test::test
+Struct
+test
+::
+test
+::
+TestId
+Copy item path
+source
+·
+[
+−
+]
+pub struct TestId(pub
+usize
+);
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Tuple Fields
+§
+§
+0:
+usize
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+TestId
+source
+§
+fn
+clone
+(&self) ->
+TestId
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+TestId
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Hash
+for
+TestId
+source
+§
+fn
+hash
+<__H:
+Hasher
+>(&self, state:
+&mut __H
+)
+Feeds this value into the given
+Hasher
+.
+Read more
+1.3.0
+·
+source
+§
+fn
+hash_slice
+<H>(data: &
+[Self]
+, state:
+&mut H
+)
+where
+    H:
+Hasher
+,
+    Self:
+Sized
+,
+Feeds a slice of this type into the given
+Hasher
+.
+Read more
+source
+§
+impl
+PartialEq
+for
+TestId
+source
+§
+fn
+eq
+(&self, other: &
+TestId
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+Copy
+for
+TestId
+source
+§
+impl
+Eq
+for
+TestId
+source
+§
+impl
+StructuralPartialEq
+for
+TestId
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TestId
+§
+impl
+RefUnwindSafe
+for
+TestId
+§
+impl
+Send
+for
+TestId
+§
+impl
+Sync
+for
+TestId
+§
+impl
+Unpin
+for
+TestId
+§
+impl
+UnwindSafe
+for
+TestId
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/struct.TestOpts.html
+
+TestOpts in test::test - Rust
+test
+1.82.0-dev
+TestOpts
+Fields
+bench_benchmarks
+color
+exclude_should_panic
+fail_fast
+filter_exact
+filters
+force_run_in_process
+format
+list
+logfile
+nocapture
+options
+run_ignored
+run_tests
+shuffle
+shuffle_seed
+skip
+test_threads
+time_options
+Methods
+use_color
+Trait Implementations
+Debug
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+From<T>
+Into<U>
+TryFrom<U>
+TryInto<U>
+In test::test
+Struct
+test
+::
+test
+::
+TestOpts
+Copy item path
+source
+·
+[
+−
+]
+pub struct TestOpts {
+Show 19 fields
+pub list:
+bool
+,
+    pub filters:
+Vec
+<
+String
+>,
+    pub filter_exact:
+bool
+,
+    pub force_run_in_process:
+bool
+,
+    pub exclude_should_panic:
+bool
+,
+    pub run_ignored:
+RunIgnored
+,
+    pub run_tests:
+bool
+,
+    pub bench_benchmarks:
+bool
+,
+    pub logfile:
+Option
+<
+PathBuf
+>,
+    pub nocapture:
+bool
+,
+    pub color:
+ColorConfig
+,
+    pub format:
+OutputFormat
+,
+    pub shuffle:
+bool
+,
+    pub shuffle_seed:
+Option
+<
+u64
+>,
+    pub test_threads:
+Option
+<
+usize
+>,
+    pub skip:
+Vec
+<
+String
+>,
+    pub time_options:
+Option
+<
+TestTimeOptions
+>,
+    pub fail_fast:
+bool
+,
+    pub options:
+Options
+,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Fields
+§
+§
+list:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+filters:
+Vec
+<
+String
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+filter_exact:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+force_run_in_process:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+exclude_should_panic:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+run_ignored:
+RunIgnored
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+run_tests:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+bench_benchmarks:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+logfile:
+Option
+<
+PathBuf
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+nocapture:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+color:
+ColorConfig
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+format:
+OutputFormat
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+shuffle:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+shuffle_seed:
+Option
+<
+u64
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+test_threads:
+Option
+<
+usize
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+skip:
+Vec
+<
+String
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+time_options:
+Option
+<
+TestTimeOptions
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+fail_fast:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Stop at first failing test.
+May run a few more tests due to threading, but will
+abort as soon as possible.
+§
+options:
+Options
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Implementations
+§
+source
+§
+impl
+TestOpts
+source
+pub fn
+use_color
+(&self) ->
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Debug
+for
+TestOpts
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TestOpts
+§
+impl
+RefUnwindSafe
+for
+TestOpts
+§
+impl
+Send
+for
+TestOpts
+§
+impl
+Sync
+for
+TestOpts
+§
+impl
+Unpin
+for
+TestOpts
+§
+impl
+UnwindSafe
+for
+TestOpts
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/struct.TestDesc.html
+
+TestDesc in test::test - Rust
+test
+1.82.0-dev
+TestDesc
+Fields
+compile_fail
+end_col
+end_line
+ignore
+ignore_message
+name
+no_run
+should_panic
+source_file
+start_col
+start_line
+test_type
+Methods
+padded_name
+test_mode
+Trait Implementations
+Clone
+Debug
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In test::test
+Struct
+test
+::
+test
+::
+TestDesc
+Copy item path
+source
+·
+[
+−
+]
+pub struct TestDesc {
+    pub name:
+TestName
+,
+    pub ignore:
+bool
+,
+    pub ignore_message:
+Option
+<&'static
+str
+>,
+    pub source_file: &'static
+str
+,
+    pub start_line:
+usize
+,
+    pub start_col:
+usize
+,
+    pub end_line:
+usize
+,
+    pub end_col:
+usize
+,
+    pub should_panic:
+ShouldPanic
+,
+    pub compile_fail:
+bool
+,
+    pub no_run:
+bool
+,
+    pub test_type:
+TestType
+,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Fields
+§
+§
+name:
+TestName
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+ignore:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+ignore_message:
+Option
+<&'static
+str
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+source_file: &'static
+str
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+start_line:
+usize
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+start_col:
+usize
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+end_line:
+usize
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+end_col:
+usize
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+should_panic:
+ShouldPanic
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+compile_fail:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+no_run:
+bool
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+test_type:
+TestType
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Implementations
+§
+source
+§
+impl
+TestDesc
+source
+pub fn
+padded_name
+(&self, column_count:
+usize
+, align:
+NamePadding
+) ->
+String
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+pub fn
+test_mode
+(&self) ->
+Option
+<&'static
+str
+>
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Returns None for ignored test or tests that are just run, otherwise returns a description of the type of test.
+Descriptions include “should panic”, “compile fail” and “compile”.
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+TestDesc
+source
+§
+fn
+clone
+(&self) ->
+TestDesc
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+TestDesc
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+TestDesc
+§
+impl
+RefUnwindSafe
+for
+TestDesc
+§
+impl
+Send
+for
+TestDesc
+§
+impl
+Sync
+for
+TestDesc
+§
+impl
+Unpin
+for
+TestDesc
+§
+impl
+UnwindSafe
+for
+TestDesc
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test/enum.ShouldPanic.html
+
+ShouldPanic in test::test - Rust
+test
+1.82.0-dev
+ShouldPanic
+Variants
+No
+Yes
+YesWithMessage
+Trait Implementations
+Clone
+Copy
+Debug
+Eq
+Hash
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In test::test
+Enum
+test
+::
+test
+::
+ShouldPanic
+Copy item path
+source
+·
+[
+−
+]
+pub enum ShouldPanic {
+    No,
+    Yes,
+    YesWithMessage(&'static
+str
+),
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Whether test is expected to panic or not
+Variants
+§
+§
+No
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+Yes
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+YesWithMessage(&'static
+str
+)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+ShouldPanic
+source
+§
+fn
+clone
+(&self) ->
+ShouldPanic
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+ShouldPanic
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+Hash
+for
+ShouldPanic
+source
+§
+fn
+hash
+<__H:
+Hasher
+>(&self, state:
+&mut __H
+)
+Feeds this value into the given
+Hasher
+.
+Read more
+1.3.0
+·
+source
+§
+fn
+hash_slice
+<H>(data: &
+[Self]
+, state:
+&mut H
+)
+where
+    H:
+Hasher
+,
+    Self:
+Sized
+,
+Feeds a slice of this type into the given
+Hasher
+.
+Read more
+source
+§
+impl
+PartialEq
+for
+ShouldPanic
+source
+§
+fn
+eq
+(&self, other: &
+ShouldPanic
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+Copy
+for
+ShouldPanic
+source
+§
+impl
+Eq
+for
+ShouldPanic
+source
+§
+impl
+StructuralPartialEq
+for
+ShouldPanic
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+ShouldPanic
+§
+impl
+RefUnwindSafe
+for
+ShouldPanic
+§
+impl
+Send
+for
+ShouldPanic
+§
+impl
+Sync
+for
+ShouldPanic
+§
+impl
+Unpin
+for
+ShouldPanic
+§
+impl
+UnwindSafe
+for
+ShouldPanic
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/test_result/enum.TestResult.html
+
+Redirection
+Redirecting to
+../../test/test/enum.TestResult.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/cli/fn.parse_opts.html
+
+Redirection
+Redirecting to
+../../test/test/fn.parse_opts.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/cli/struct.TestOpts.html
+
+Redirection
+Redirecting to
+../../test/test/struct.TestOpts.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/time/struct.TestExecTime.html
+
+Redirection
+Redirecting to
+../../test/test/struct.TestExecTime.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/time/struct.TestTimeOptions.html
+
+Redirection
+Redirecting to
+../../test/test/struct.TestTimeOptions.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/helpers/metrics/struct.Metric.html
+
+Redirection
+Redirecting to
+../../../test/test/struct.Metric.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/helpers/metrics/struct.MetricMap.html
+
+Redirection
+Redirecting to
+../../../test/test/struct.MetricMap.html
+...
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/stats/struct.Summary.html
+
+Summary in test::stats - Rust
+test
+1.82.0-dev
+Summary
+Fields
+iqr
+max
+mean
+median
+median_abs_dev
+median_abs_dev_pct
+min
+quartiles
+std_dev
+std_dev_pct
+sum
+var
+Methods
+new
+Trait Implementations
+Clone
+Copy
+Debug
+PartialEq
+StructuralPartialEq
+Auto Trait Implementations
+Freeze
+RefUnwindSafe
+Send
+Sync
+Unpin
+UnwindSafe
+Blanket Implementations
+Any
+Borrow<T>
+BorrowMut<T>
+CloneToUninit
+CloneToUninit
+From<T>
+Into<U>
+ToOwned
+TryFrom<U>
+TryInto<U>
+In test::stats
+Struct
+test
+::
+stats
+::
+Summary
+Copy item path
+source
+·
+[
+−
+]
+pub struct Summary {
+    pub sum:
+f64
+,
+    pub min:
+f64
+,
+    pub max:
+f64
+,
+    pub mean:
+f64
+,
+    pub median:
+f64
+,
+    pub var:
+f64
+,
+    pub std_dev:
+f64
+,
+    pub std_dev_pct:
+f64
+,
+    pub median_abs_dev:
+f64
+,
+    pub median_abs_dev_pct:
+f64
+,
+    pub quartiles: (
+f64
+,
+f64
+,
+f64
+),
+    pub iqr:
+f64
+,
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Extracted collection of all the summary statistics of a sample set.
+Fields
+§
+§
+sum:
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+min:
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+max:
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+mean:
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+median:
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+var:
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+std_dev:
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+std_dev_pct:
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+median_abs_dev:
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+median_abs_dev_pct:
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+quartiles: (
+f64
+,
+f64
+,
+f64
+)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+§
+iqr:
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Implementations
+§
+source
+§
+impl
+Summary
+source
+pub fn
+new
+(samples: &[
+f64
+]) ->
+Summary
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Constructs a new summary of a sample set.
+Trait Implementations
+§
+source
+§
+impl
+Clone
+for
+Summary
+source
+§
+fn
+clone
+(&self) ->
+Summary
+Returns a copy of the value.
+Read more
+1.0.0
+·
+source
+§
+fn
+clone_from
+(&mut self, source:
+&Self
+)
+Performs copy-assignment from
+source
+.
+Read more
+source
+§
+impl
+Debug
+for
+Summary
+source
+§
+fn
+fmt
+(&self, f: &mut
+Formatter
+<'_>) ->
+Result
+Formats the value using the given formatter.
+Read more
+source
+§
+impl
+PartialEq
+for
+Summary
+source
+§
+fn
+eq
+(&self, other: &
+Summary
+) ->
+bool
+Tests for
+self
+and
+other
+values to be equal, and is used by
+==
+.
+1.0.0
+·
+source
+§
+fn
+ne
+(&self, other:
+&Rhs
+) ->
+bool
+Tests for
+!=
+. The default implementation is almost always sufficient,
+and should not be overridden without very good reason.
+source
+§
+impl
+Copy
+for
+Summary
+source
+§
+impl
+StructuralPartialEq
+for
+Summary
+Auto Trait Implementations
+§
+§
+impl
+Freeze
+for
+Summary
+§
+impl
+RefUnwindSafe
+for
+Summary
+§
+impl
+Send
+for
+Summary
+§
+impl
+Sync
+for
+Summary
+§
+impl
+Unpin
+for
+Summary
+§
+impl
+UnwindSafe
+for
+Summary
+Blanket Implementations
+§
+source
+§
+impl<T>
+Any
+for T
+where
+    T: 'static + ?
+Sized
+,
+source
+§
+fn
+type_id
+(&self) ->
+TypeId
+Gets the
+TypeId
+of
+self
+.
+Read more
+source
+§
+impl<T>
+Borrow
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow
+(&self) ->
+&T
+Immutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+BorrowMut
+<T> for T
+where
+    T: ?
+Sized
+,
+source
+§
+fn
+borrow_mut
+(&mut self) ->
+&mut T
+Mutably borrows from an owned value.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Copy
+,
+source
+§
+unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+CloneToUninit
+for T
+where
+    T:
+Clone
+,
+source
+§
+default unsafe fn
+clone_to_uninit
+(&self, dst:
+*mut T
+)
+🔬
+This is a nightly-only experimental API. (
+clone_to_uninit
+)
+Performs copy-assignment from
+self
+to
+dst
+.
+Read more
+source
+§
+impl<T>
+From
+<T> for T
+source
+§
+fn
+from
+(t: T) -> T
+Returns the argument unchanged.
+source
+§
+impl<T, U>
+Into
+<U> for T
+where
+    U:
+From
+<T>,
+source
+§
+fn
+into
+(self) -> U
+Calls
+U::from(self)
+.
+That is, this conversion is whatever the implementation of
+From
+<T> for U
+chooses to do.
+source
+§
+impl<T>
+ToOwned
+for T
+where
+    T:
+Clone
+,
+§
+type
+Owned
+= T
+The resulting type after obtaining ownership.
+source
+§
+fn
+to_owned
+(&self) -> T
+Creates owned data from borrowed data, usually by cloning.
+Read more
+source
+§
+fn
+clone_into
+(&self, target:
+&mut T
+)
+Uses borrowed data to replace owned data, usually by cloning.
+Read more
+source
+§
+impl<T, U>
+TryFrom
+<U> for T
+where
+    U:
+Into
+<T>,
+§
+type
+Error
+=
+Infallible
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_from
+(value: U) ->
+Result
+<T, <T as
+TryFrom
+<U>>::
+Error
+>
+Performs the conversion.
+source
+§
+impl<T, U>
+TryInto
+<U> for T
+where
+    U:
+TryFrom
+<T>,
+§
+type
+Error
+= <U as
+TryFrom
+<T>>::
+Error
+The type returned in the event of a conversion error.
+source
+§
+fn
+try_into
+(self) ->
+Result
+<U, <U as
+TryFrom
+<T>>::
+Error
+>
+Performs the conversion.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/stats/index.html
+
+test::stats - Rust
+test
+1.82.0-dev
+Module stats
+Structs
+Traits
+Functions
+In crate test
+Module
+test
+::
+stats
+Copy item path
+source
+·
+[
+−
+]
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Structs
+§
+Summary
+Experimental
+Extracted collection of all the summary statistics of a sample set.
+Traits
+§
+Stats
+Experimental
+Trait that provides simple descriptive statistics on a univariate set of numeric samples.
+Functions
+§
+winsorize
+Experimental
+Winsorize a set of samples, replacing values above the
+100-pct
+percentile
+and below the
+pct
+percentile with those percentiles themselves. This is a
+way of minimizing the effect of outliers, at the cost of biasing the sample.
+It differs from trimming in that it does not change the number of samples,
+just changes the values of those that are outliers.
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/stats/trait.Stats.html
+
+Stats in test::stats - Rust
+test
+1.82.0-dev
+Stats
+Required Methods
+iqr
+max
+mean
+median
+median_abs_dev
+median_abs_dev_pct
+min
+percentile
+quartiles
+std_dev
+std_dev_pct
+sum
+var
+Implementations on Foreign Types
+[f64]
+Implementors
+In test::stats
+Trait
+test
+::
+stats
+::
+Stats
+Copy item path
+source
+·
+[
+−
+]
+pub trait Stats {
+Show 13 methods
+// Required methods
+    fn
+sum
+(&self) ->
+f64
+;
+fn
+min
+(&self) ->
+f64
+;
+fn
+max
+(&self) ->
+f64
+;
+fn
+mean
+(&self) ->
+f64
+;
+fn
+median
+(&self) ->
+f64
+;
+fn
+var
+(&self) ->
+f64
+;
+fn
+std_dev
+(&self) ->
+f64
+;
+fn
+std_dev_pct
+(&self) ->
+f64
+;
+fn
+median_abs_dev
+(&self) ->
+f64
+;
+fn
+median_abs_dev_pct
+(&self) ->
+f64
+;
+fn
+percentile
+(&self, pct:
+f64
+) ->
+f64
+;
+fn
+quartiles
+(&self) -> (
+f64
+,
+f64
+,
+f64
+);
+fn
+iqr
+(&self) ->
+f64
+;
+}
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Trait that provides simple descriptive statistics on a univariate set of numeric samples.
+Required Methods
+§
+source
+fn
+sum
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Sum of the samples.
+Note: this method sacrifices performance at the altar of accuracy
+Depends on IEEE 754 arithmetic guarantees. See proof of correctness at:
+“Adaptive Precision Floating-Point Arithmetic and Fast Robust Geometric
+Predicates”
+source
+fn
+min
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Minimum value of the samples.
+source
+fn
+max
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Maximum value of the samples.
+source
+fn
+mean
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Arithmetic mean (average) of the samples: sum divided by sample-count.
+See:
+https://en.wikipedia.org/wiki/Arithmetic_mean
+source
+fn
+median
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Median of the samples: value separating the lower half of the samples from the higher half.
+Equal to
+self.percentile(50.0)
+.
+See:
+https://en.wikipedia.org/wiki/Median
+source
+fn
+var
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Variance of the samples: bias-corrected mean of the squares of the differences of each
+sample from the sample mean. Note that this calculates the
+sample variance
+rather than the
+population variance, which is assumed to be unknown. It therefore corrects the
+(n-1)/n
+bias that would appear if we calculated a population variance, by dividing by
+(n-1)
+rather
+than
+n
+.
+See:
+https://en.wikipedia.org/wiki/Variance
+source
+fn
+std_dev
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Standard deviation: the square root of the sample variance.
+Note: this is not a robust statistic for non-normal distributions. Prefer the
+median_abs_dev
+for unknown distributions.
+See:
+https://en.wikipedia.org/wiki/Standard_deviation
+source
+fn
+std_dev_pct
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Standard deviation as a percent of the mean value. See
+std_dev
+and
+mean
+.
+Note: this is not a robust statistic for non-normal distributions. Prefer the
+median_abs_dev_pct
+for unknown distributions.
+source
+fn
+median_abs_dev
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Scaled median of the absolute deviations of each sample from the sample median. This is a
+robust (distribution-agnostic) estimator of sample variability. Use this in preference to
+std_dev
+if you cannot assume your sample is normally distributed. Note that this is scaled
+by the constant
+1.4826
+to allow its use as a consistent estimator for the standard
+deviation.
+See:
+https://en.wikipedia.org/wiki/Median_absolute_deviation
+source
+fn
+median_abs_dev_pct
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Median absolute deviation as a percent of the median. See
+median_abs_dev
+and
+median
+.
+source
+fn
+percentile
+(&self, pct:
+f64
+) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Percentile: the value below which
+pct
+percent of the values in
+self
+fall. For example,
+percentile(95.0) will return the value
+v
+such that 95% of the samples
+s
+in
+self
+satisfy
+s <= v
+.
+Calculated by linear interpolation between closest ranks.
+See:
+https://en.wikipedia.org/wiki/Percentile
+source
+fn
+quartiles
+(&self) -> (
+f64
+,
+f64
+,
+f64
+)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Quartiles of the sample: three values that divide the sample into four equal groups, each
+with 1/4 of the data. The middle value is the median. See
+median
+and
+percentile
+. This
+function may calculate the 3 quartiles more efficiently than 3 calls to
+percentile
+, but
+is otherwise equivalent.
+See also:
+https://en.wikipedia.org/wiki/Quartile
+source
+fn
+iqr
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Inter-quartile range: the difference between the 25th percentile (1st quartile) and the 75th
+percentile (3rd quartile). See
+quartiles
+.
+See also:
+https://en.wikipedia.org/wiki/Interquartile_range
+Implementations on Foreign Types
+§
+source
+§
+impl
+Stats
+for [
+f64
+]
+source
+§
+fn
+sum
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+§
+fn
+min
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+§
+fn
+max
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+§
+fn
+mean
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+§
+fn
+median
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+§
+fn
+var
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+§
+fn
+std_dev
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+§
+fn
+std_dev_pct
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+§
+fn
+median_abs_dev
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+§
+fn
+median_abs_dev_pct
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+§
+fn
+percentile
+(&self, pct:
+f64
+) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+§
+fn
+quartiles
+(&self) -> (
+f64
+,
+f64
+,
+f64
+)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+source
+§
+fn
+iqr
+(&self) ->
+f64
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Implementors
+§
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/stats/fn.winsorize.html
+
+winsorize in test::stats - Rust
+test
+1.82.0-dev
+In test::stats
+Function
+test
+::
+stats
+::
+winsorize
+Copy item path
+source
+·
+[
+−
+]
+pub fn winsorize(samples: &mut [
+f64
+], pct:
+f64
+)
+🔬
+This is a nightly-only experimental API. (
+test
+)
+Expand description
+Winsorize a set of samples, replacing values above the
+100-pct
+percentile
+and below the
+pct
+percentile with those percentiles themselves. This is a
+way of minimizing the effect of outliers, at the cost of biasing the sample.
+It differs from trimming in that it does not change the number of samples,
+just changes the values of those that are outliers.
+See:
+https://en.wikipedia.org/wiki/Winsorising
+
+================================================================================
+
+
+
+/Users/morrison/rust/build/aarch64-apple-darwin/doc/test/console/fn.run_tests_console.html
+
+Redirection
+Redirecting to
+../../test/fn.run_tests_console.html
+...
+
+================================================================================
+
